@@ -5,24 +5,23 @@ import altair as alt
 import requests
 from datetime import datetime, timedelta
 
-# =============================================================================
+
 # Weather Data and Water Need Estimation Module
-# =============================================================================
 def fetch_weather_data(lat, lon, start_date, end_date):
     base_url = "https://archive-api.open-meteo.com/v1/archive"
     params = {
         "latitude": lat,
         "longitude": lon,
-        "start_date": start_date.strftime('%Y-%m-%d'),
-        "end_date": end_date.strftime('%Y-%m-%d'),
+        "start_date": start_date.strftime("%Y-%m-%d"),
+        "end_date": end_date.strftime("%Y-%m-%d"),
         "daily": [
             "temperature_2m_max",
             "temperature_2m_min",
             "windspeed_10m_max",
             "relative_humidity_2m_max",
-            "shortwave_radiation_sum"
+            "shortwave_radiation_sum",
         ],
-        "timezone": "auto"
+        "timezone": "auto",
     }
     response = requests.get(base_url, params=params)
     response.raise_for_status()  # Raises HTTPError for bad responses
@@ -33,14 +32,21 @@ def fetch_weather_data(lat, lon, start_date, end_date):
             f"Weather data is unavailable for the selected date range and location. Response: {data}"
         )
 
-    df = pd.DataFrame({
-        "date": pd.date_range(start=start_date, end=end_date).date,
-        "tavg": (np.array(data["daily"]["temperature_2m_max"]) + np.array(data["daily"]["temperature_2m_min"])) / 2,
-        "wspd": data["daily"]["windspeed_10m_max"],
-        "rhum": data["daily"]["relative_humidity_2m_max"],
-        "rad": data["daily"]["shortwave_radiation_sum"]
-    })
+    df = pd.DataFrame(
+        {
+            "date": pd.date_range(start=start_date, end=end_date).date,
+            "tavg": (
+                np.array(data["daily"]["temperature_2m_max"])
+                + np.array(data["daily"]["temperature_2m_min"])
+            )
+            / 2,
+            "wspd": data["daily"]["windspeed_10m_max"],
+            "rhum": data["daily"]["relative_humidity_2m_max"],
+            "rad": data["daily"]["shortwave_radiation_sum"],
+        }
+    )
     return df
+
 
 def compute_penman_monteith(temp, wind, rh, rad, elevation=0):
     """
@@ -57,7 +63,9 @@ def compute_penman_monteith(temp, wind, rh, rad, elevation=0):
       - ET0 in mm/day
     """
     temp_k = temp + 273.15
-    delta = (4098 * (0.6108 * np.exp((17.27 * temp) / (temp + 237.3)))) / ((temp + 237.3) ** 2)
+    delta = (4098 * (0.6108 * np.exp((17.27 * temp) / (temp + 237.3)))) / (
+        (temp + 237.3) ** 2
+    )
 
     # Adjust atmospheric pressure based on elevation.
     # Standard sea-level pressure is ~101.3 kPa.
@@ -69,10 +77,15 @@ def compute_penman_monteith(temp, wind, rh, rad, elevation=0):
     # rad is assumed to be in MJ/m²/day (no conversion needed)
     rad_mj = rad
 
-    et_0 = (0.408 * delta * rad_mj + gamma * (900 / temp_k) * wind * (e_s - e_a)) / (delta + gamma * (1 + 0.34 * wind))
+    et_0 = (0.408 * delta * rad_mj + gamma * (900 / temp_k) * wind * (e_s - e_a)) / (
+        delta + gamma * (1 + 0.34 * wind)
+    )
     return max(et_0, 0)
 
-def estimate_water_needs(lat, lon, start_date, end_date, park_area, kc=0.8, elevation=0):
+
+def estimate_water_needs(
+    lat, lon, start_date, end_date, park_area, kc=0.8, elevation=0
+):
     """
     Estimates the water needs for a given park area over a specified date range.
 
@@ -90,13 +103,18 @@ def estimate_water_needs(lat, lon, start_date, end_date, park_area, kc=0.8, elev
     """
     weather_data = fetch_weather_data(lat, lon, start_date, end_date)
 
-    weather_data['ET0'] = weather_data.apply(
-        lambda row: compute_penman_monteith(row['tavg'], row['wspd'], row['rhum'], row['rad'], elevation),
-        axis=1
+    weather_data["ET0"] = weather_data.apply(
+        lambda row: compute_penman_monteith(
+            row["tavg"], row["wspd"], row["rhum"], row["rad"], elevation
+        ),
+        axis=1,
     )
-    weather_data['ETc'] = weather_data['ET0'] * kc
-    weather_data['water_need_m3'] = (weather_data['ETc'] * park_area / 1000).round(decimals=4)
-    return weather_data[['date', 'ET0', 'ETc', 'water_need_m3']]
+    weather_data["ETc"] = weather_data["ET0"] * kc
+    weather_data["water_need_m3"] = (weather_data["ETc"] * park_area / 1000).round(
+        decimals=4
+    )
+    return weather_data[["date", "ET0", "ETc", "water_need_m3"]]
+
 
 if __name__ == "__main__":
     lat, lon = 39.9, 32.85  # Ankara, Turkey
@@ -105,11 +123,13 @@ if __name__ == "__main__":
     park_area = 1000  # m²
     elevation = 938  # Approximate elevation for Ankara in meters (optional)
 
-    water_needs = estimate_water_needs(lat, lon, start_date, end_date, park_area, kc=1, elevation=elevation)
-    total_water_need = water_needs['water_need_m3'].sum()
-    average_et0 = water_needs['ET0'].mean()
-    average_etc = water_needs['ETc'].mean()
-    average_water_need = water_needs['water_need_m3'].mean()
+    water_needs = estimate_water_needs(
+        lat, lon, start_date, end_date, park_area, kc=1, elevation=elevation
+    )
+    total_water_need = water_needs["water_need_m3"].sum()
+    average_et0 = water_needs["ET0"].mean()
+    average_etc = water_needs["ETc"].mean()
+    average_water_need = water_needs["water_need_m3"].mean()
 
     # Display the detailed water needs per day
     print(water_needs.to_string(index=False))
