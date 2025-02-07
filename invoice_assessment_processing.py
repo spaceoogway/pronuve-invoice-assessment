@@ -1,5 +1,3 @@
-# %% md
-
 # %%
 import pandas as pd
 from util import similarity, weather
@@ -39,6 +37,8 @@ df_ca_invoice["end_read_date"] = pd.to_datetime(df_ca_invoice["end_read_date"]).
 df_ca_name_similarity = similarity.best_matches(
     list(df_ca_green_area["PARK ADI"].unique()), list(df_ca_invoice["name"].unique())
 )
+
+df_ca_name_similarity.to_csv("data/ca_name_matching.csv", index=False)
 
 # 1) Filter the similarity DataFrame for high-confidence matches
 score_threshold = 0.95
