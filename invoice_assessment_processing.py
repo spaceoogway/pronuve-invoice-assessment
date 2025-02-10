@@ -111,10 +111,10 @@ df_ca_invoice = df_ca_invoice[
     [
         "subscription",
         "name",
-        "water_need_total",
-        "volume",
         "start_read_date",
         "end_read_date",
+        "water_need_total",
+        "volume",
         "grass_area",
     ]
 ].copy()

@@ -1,99 +1,73 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-from datetime import date, datetime
+from datetime import date
 import calendar
 from dateutil import rrule
+from datetime import timedelta
 
-# --- Page configuration: wide layout and custom title ---
-st.set_page_config(page_title="Water Consumption Dashboard", layout="wide")
+# -- Sayfa Başlığı ve Geniş Layout --
+st.set_page_config(page_title="Su Tüketimi Panosu", layout="wide")
 
-# --- Custom CSS ---
+# -- Minimal CSS: sadece arkaplan ve font --
 st.markdown("""
 <style>
-/* Hide default Streamlit elements */
-header, footer, .css-18ni7ap {visibility: hidden;}
-
-/* Global font and background */
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f4f4f4;
-    overflow: hidden;  /* Prevent scrolling */
-}
-
-/* KPI card style: equal size, centered content */
-.kpi-card {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    margin: 0.5rem;
-    min-width: 200px;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.kpi-card h3 {
-    margin: 0.2rem 0;
-    color: #333;
-    font-size: 1.2rem;
-}
-.kpi-card p {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0.2rem 0;
-    color: #0077c0;
-}
-.kpi-card small {
-    color: #666;
-}
-
-/* Filter container style: a horizontal bar at the top */
-.filter-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-}
-.filter-container > div {
-    flex: 1;
-    margin-right: 1rem;
-}
-.filter-container > div:last-child {
-    margin-right: 0;
-}
-
-/* Increase width for select boxes so that full park names display */
-div[data-baseweb="select"] {
-    min-width: 250px;
-    white-space: nowrap;
-}
-
-/* Tabs: add a little extra gap between tab labels */
-.stTabs [role=tablist] {
-    gap: 1rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f9f9f9;
 }
 </style>
 """, unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+    /* Hide Streamlit's sidebar */
+    section[data-testid="stSidebar"] {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <style>
+    /* Hide hamburger menu, main menu, footer */
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
 
-# --- Load and Prepare Data ---
-invoice_df = pd.read_csv("data/ca_invoice.csv", usecols=["name", "grass_area", "start_read_date", "end_read_date", "volume", "estimated_volume"])
+    /* Remove extra whitespace on top & bottom */
+    .block-container {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# -- Uygulama Başlığı --
+# st.title("Su Tüketimi Panosu")
+
+# -- Veri Yükleme --
+invoice_df = pd.read_csv(
+    "data/ca_invoice.csv",
+    usecols=["name", "grass_area", "start_read_date", "end_read_date", "volume", "estimated_volume"]
+)
 invoice_df["volume"] = invoice_df["volume"].astype(int)
 invoice_df["difference"] = invoice_df["volume"] - invoice_df["estimated_volume"]
+
+# Tarihleri dönüştür
 invoice_df["start_read_date"] = pd.to_datetime(invoice_df["start_read_date"]).dt.date
 invoice_df["end_read_date"]   = pd.to_datetime(invoice_df["end_read_date"]).dt.date
 
-# Compute the min and max months in the dataset (for building month-year selectors)
+invoice_df = invoice_df[invoice_df["start_read_date"] >= pd.to_datetime("2015-01-01").date()]
+# Min-Max tarihler
 min_date = invoice_df["start_read_date"].min()
-max_date = invoice_df["end_read_date"].max()
+max_date = invoice_df["start_read_date"].max()
 
-# Generate a list of the 1st day of each month from min_date to max_date
 def month_range(start_date, end_date):
-    """Return a list of date objects (YYYY-mm-01) from start_date to end_date (inclusive) monthly."""
     start = date(start_date.year, start_date.month, 1)
     end   = date(end_date.year, end_date.month, 1)
     months = []
@@ -101,206 +75,320 @@ def month_range(start_date, end_date):
         months.append(dt.date())
     return months
 
-all_months = month_range(min_date, max_date)
-
 def format_month(dt: date) -> str:
-    """Format a date object in 'YYYY-MM' form for display."""
     return dt.strftime("%Y-%m")
 
-# --- Filter Controls at the Top ---
-with st.container():
-    st.markdown("<div class='filter-container'>", unsafe_allow_html=True)
-    col1, col2, col3 = st.columns(3)
+all_months = sorted(month_range(min_date, max_date), reverse=True)
 
-    with col1:
-        # Park selection in Turkish
-        parks = invoice_df["name"].unique().tolist()
-        if "ÇANKAYA" not in parks:
-            parks.insert(0, "ÇANKAYA")
-        default_index = parks.index("ÇANKAYA")
-        selected_park = st.selectbox("Park Seçiniz:", parks, index=default_index)
+# Yardımcı fonksiyon: YYYY-MM indeksini bul
+def get_month_index(yyyy_mm: str) -> int:
+    for i, m in enumerate(all_months):
+        if format_month(m) == yyyy_mm:
+            return i
+    return 0
 
-    with col2:
-        # Start month-year
-        st.write("Başlangıç Ay/Yıl")
-        start_mo = st.selectbox(
-            "",  # label is above
-            options=[format_month(m) for m in all_months],
-            index=0  # pick the earliest by default
-        )
+# -- Filtreler --
+# st.subheader("Filtreler")
+col1, col2, col3 = st.columns(3)
 
-    with col3:
-        # End month-year
-        st.write("Bitiş Ay/Yıl")
-        end_mo = st.selectbox(
-            "",  # label is above
-            options=[format_month(m) for m in all_months],
-            index=len(all_months) - 1  # pick the latest by default
-        )
+with col1:
+    # Park seçimi
+    unique_parks = invoice_df["name"].unique().tolist()
+    if "ÇANKAYA" not in unique_parks:
+        unique_parks.insert(0, "ÇANKAYA")
+    park_index = unique_parks.index("ÇANKAYA")
+    selected_park = st.selectbox("Park Seçiniz:", unique_parks, index=park_index)
 
-    st.markdown("</div>", unsafe_allow_html=True)
+with col2:
+    # Varsayılan Başlangıç: 2010-11
+    start_default = get_month_index("2016-01")
+    start_mo = st.selectbox(
+        "Başlangıç Ay/Yıl",
+        [format_month(m) for m in all_months],
+        index=start_default
+    )
 
-# Convert the chosen month-year strings back into date objects
+with col3:
+    # Varsayılan Bitiş: 2023-09 (örnek)
+
+    end_default = get_month_index("2023-09")
+    end_mo = st.selectbox(
+        "Bitiş Ay/Yıl",
+        [format_month(m) for m in all_months],
+        index=end_default,
+
+    )
+
+# Tarih aralığına dönüştür
 start_year, start_month = map(int, start_mo.split("-"))
-end_year, end_month     = map(int, end_mo.split("-"))
-
+end_year, end_month = map(int, end_mo.split("-"))
 start_filter = date(start_year, start_month, 1)
-# For the end filter, we get the last day of that month
 end_day = calendar.monthrange(end_year, end_month)[1]
 end_filter = date(end_year, end_month, end_day)
 
-# Ensure the user hasn't swapped start/end
+# Eğer kullanıcı yanlış seçtiyse ters çevir
 if start_filter > end_filter:
-    st.warning("Başlangıç ayı, bitiş ayından sonra seçildi. Değerler ters çevriliyor.")
+    st.warning("Başlangıç ayı, bitiş ayından sonra. Tarihler değiştirildi.")
     start_filter, end_filter = end_filter, start_filter
 
-# --- Apply Filters ---
+# -- Veri Filtreleme --
 if selected_park == "ÇANKAYA":
-    park_filtered_df = invoice_df.copy()
+    park_df = invoice_df.copy()
 else:
-    park_filtered_df = invoice_df[invoice_df["name"] == selected_park]
+    park_df = invoice_df[invoice_df["name"] == selected_park]
 
-date_filtered_df = park_filtered_df[
-    (park_filtered_df["end_read_date"]   >= start_filter) &
-    (park_filtered_df["start_read_date"] <= end_filter)
-    ]
+filtered_df = park_df[
+    (park_df["start_read_date"]   >= start_filter) &
+    (park_df["end_read_date"] <= end_filter)
+    ].copy()
 
-filtered_df = date_filtered_df.copy()
-
-# --- Prepare Display DataFrame with Turkish column names ---
+# Fark (%)
 filtered_df["difference_pct"] = (
         (filtered_df["difference"] / filtered_df["estimated_volume"]) * 100
-).replace([float("inf"), float("-inf")], 0)  # Handle zero or negative est_volume
+).replace([float("inf"), float("-inf")], 0).fillna(0)
 
-filtered_df["difference_pct"] = filtered_df["difference_pct"].fillna(0)
-
-display_df = (
-    filtered_df
-    .drop(columns=["grass_area"])
-    .rename(columns={
-        "name":             "Park Adı",
-        "start_read_date":  "Başlangıç Tarihi",
-        "end_read_date":    "Bitiş Tarihi",
-        "volume":           "Gerçek (m³)",
-        "estimated_volume": "Tahmin (m³)",
-        "difference":       "Fark (m³)",
-        "difference_pct":   "Fark (%)"
-    })
-)
-
-# Sort the invoice table by latest Bitiş Tarihi descending
+# Türkçe isimlerle tablo
+display_df = filtered_df.drop(columns=["grass_area"]).rename(columns={
+    "name":             "Park Adı",
+    "start_read_date":  "Başlangıç Tarihi",
+    "end_read_date":    "Bitiş Tarihi",
+    "volume":           "Gerçek (m³)",
+    "estimated_volume": "Tahmin (m³)",
+    "difference":       "Fark (m³)",
+    "difference_pct":   "Fark (%)"
+})
+# Tarih sıralaması
 display_df = display_df.sort_values("Bitiş Tarihi", ascending=False)
 
-# --- Calculate KPIs ---
-total_actual    = filtered_df["volume"].sum()
+# -- KPI Hesapları --
+total_actual = filtered_df["volume"].sum()
 total_estimated = filtered_df["estimated_volume"].sum()
-total_diff      = filtered_df["difference"].sum()
-invoice_count   = len(filtered_df)
+total_diff = filtered_df["difference"].sum()
+invoice_count = len(filtered_df)
 variance_percent = (total_diff / total_estimated * 100) if total_estimated != 0 else 0
 
-# --- Create Two Tabs: "Genel Bakış" and "Faturalar" ---
-tabs = st.tabs(["Genel Bakış", "Faturalar"])
+# -- Sekmeler --
+tab1, tab2 = st.tabs(["Genel Bakış", "Faturalar"])
 
-# ========= GENEL BAKIŞ Tab =========
-with tabs[0]:
-    # 1) KPI Cards (in English, as requested to keep rest in English)
-    with st.container():
-        kpi_cards = [
-            {
-                "title": "Total Actual",
-                "value": f"{total_actual:,} m³",
-                "subtitle": "Actual water consumption"
-            },
-            {
-                "title": "Total Estimated",
-                "value": f"{total_estimated:,} m³",
-                "subtitle": "Forecasted water need"
-            },
-            {
-                "title": "Total Difference",
-                "value": f"{total_diff:,} m³",
-                "subtitle": f"{variance_percent:.1f}% variance"
-            },
-            {
-                "title": "Invoices",
-                "value": f"{invoice_count}",
-                "subtitle": "Records analyzed"
-            }
-        ]
-        kpi_cols = st.columns(len(kpi_cards))
-        for col, kpi in zip(kpi_cols, kpi_cards):
-            col.markdown(f"""
-                <div class="kpi-card">
-                    <h3>{kpi['title']}</h3>
-                    <p>{kpi['value']}</p>
-                    <small>{kpi['subtitle']}</small>
-                </div>
-            """, unsafe_allow_html=True)
+with tab1:
+    # KPI satırı
+    kpi_cols = st.columns(4)
+    with kpi_cols[0]:
+        st.metric("Toplam Tüketim (m³)", f"{total_actual:,}", help="Gerçek su tüketimi")
+    with kpi_cols[1]:
+        st.metric("Toplam Su İhtiyacı (m³)", f"{total_estimated:,}", help="Tahmini su ihtiyacı")
+    with kpi_cols[2]:
+        st.metric("Toplam Fark (m³)", f"{total_diff:,}", help=f"{variance_percent:.1f}% sapma")
+    with kpi_cols[3]:
+        st.metric("Fatura Sayısı", f"{invoice_count}", help="Analiz edilen kayıtlar")
 
-    # 2) Altair Chart: Horizontal Bar, show all bars/labels
-    with st.container():
-        chart_df = filtered_df.copy()
-        # Create a column "Invoice Period" as "start - end"
-        chart_df["Invoice Period"] = (
-                chart_df["start_read_date"].astype(str)
-                + " - "
-                + chart_df["end_read_date"].astype(str)
+    # st.markdown("---")
+    # st.subheader("Tüketim Karşılaştırma Grafiği")
+
+    # Altair grafiği için hazırlık
+    # chart_df = filtered_df.copy()
+    # chart_df["Fatura Dönemi"] = (
+    #         chart_df["start_read_date"].astype(str) + " - " + chart_df["end_read_date"].astype(str)
+    # )
+    # chart_df["start_read_datetime"] = pd.to_datetime(chart_df["start_read_date"])
+    #
+    # # Melt
+    # chart_data = chart_df.melt(
+    #     id_vars=["Fatura Dönemi", "start_read_datetime", "name"],
+    #     value_vars=["volume", "estimated_volume"],
+    #     var_name="Hacim Türü",
+    #     value_name="Hacim (m³)"
+    # )
+    # sorted_periods = (
+    #     chart_df.sort_values("start_read_datetime", ascending=False)["Fatura Dönemi"]
+    #     .unique()
+    #     .tolist()
+    # )
+    #
+    # bar_chart = (
+    #     alt.Chart(chart_data)
+    #     .mark_bar()
+    #     .encode(
+    #         y=alt.Y("Fatura Dönemi:N", sort=sorted_periods, title="Fatura Dönemi"),
+    #         x=alt.X("Hacim (m³):Q", title="Tüketim (m³)"),
+    #         color=alt.Color("Hacim Türü:N", title="Hacim Türü"),
+    #         tooltip=[
+    #             alt.Tooltip("name", title="Park Adı"),
+    #             alt.Tooltip("start_read_datetime", title="Başlangıç Tarihi"),
+    #             alt.Tooltip("Fatura Dönemi", title="Dönem"),
+    #             alt.Tooltip("Hacim Türü", title="Tür"),
+    #             alt.Tooltip("Hacim (m³)", title="Hacim")
+    #         ]
+    #     )
+    #     .properties(width="container", height=450)
+    #     .configure_axis(labelFontSize=11)
+    # )
+    #
+    # st.altair_chart(bar_chart, use_container_width=True)
+    # 1) Group by month to reduce clutter
+    # df_monthly = filtered_df.copy()
+    # df_monthly["year_month"] = pd.to_datetime(df_monthly["start_read_date"]).dt.strftime("%Y-%m")
+    #
+    # # Sum up actual & estimated volumes per month
+    # grouped = (
+    #     df_monthly.groupby("year_month", as_index=False)
+    #     .agg({
+    #         "volume": "sum",
+    #         "estimated_volume": "sum"
+    #     })
+    # )
+    #
+    # # 2) Convert to a “long” (melted) format for Altair
+    # grouped_melt = grouped.melt(
+    #     id_vars="year_month",
+    #     value_vars=["volume", "estimated_volume"],
+    #     var_name="Hacim Türü",
+    #     value_name="Hacim (m³)"
+    # )
+    #
+    # # 3) Create a grouped bar chart
+    # chart = (
+    #     alt.Chart(grouped_melt)
+    #     .mark_bar()
+    #     .encode(
+    #         # Treat year_month as an ordinal category on the X axis
+    #         x=alt.X(
+    #             "year_month:O",
+    #             sort="ascending",
+    #             title="Ay/Yıl",
+    #             axis=alt.Axis(labelAngle=-45)  # Slightly rotate labels to avoid overlap
+    #         ),
+    #         y=alt.Y(
+    #             "Hacim (m³):Q",
+    #             stack=None,  # This key disables stacking => side-by-side bars
+    #             title="Toplam Tüketim (m³)"
+    #         ),
+    #         color=alt.Color(
+    #             "Hacim Türü:N",
+    #             title="Hacim Türü",
+    #             # You can add a custom color scale if you like:
+    #             # scale=alt.Scale(domain=["volume","estimated_volume"], range=["#4C78A8","#F58518"])
+    #         ),
+    #         tooltip=[
+    #             alt.Tooltip("year_month", title="Ay/Yıl"),
+    #             alt.Tooltip("Hacim Türü", title="Tür"),
+    #             alt.Tooltip("Hacim (m³)", title="Toplam")
+    #         ]
+    #     )
+    #     .properties(
+    #         width="container",
+    #         height=400  # Adjust as you like
+    #     )
+    #     .configure_axis(labelFontSize=11)
+    # )
+    #
+    # # Then display in your Streamlit app:
+    # st.altair_chart(chart, use_container_width=True)
+    # Example monthly grouping
+    # 2) Disaggregate each invoice into a daily usage:
+    chart_df = filtered_df.copy()
+    chart_df["start_read_date"] = pd.to_datetime(chart_df["start_read_date"])
+    chart_df["end_read_date"]   = pd.to_datetime(chart_df["end_read_date"])
+
+    rows = []
+    for _, row in chart_df.iterrows():
+        start = row["start_read_date"]
+        end   = row["end_read_date"]
+        days_in_invoice = (end - start).days + 1
+        if days_in_invoice <= 0:
+            continue
+
+        # daily usage
+        daily_actual = row["volume"] / days_in_invoice
+        daily_estimated = row["estimated_volume"] / days_in_invoice
+
+        # For each day in [start, end], build a record
+        current_day = start
+        while current_day <= end:
+            rows.append({
+                "date": current_day,
+                "daily_actual": daily_actual,
+                "daily_estimated": daily_estimated
+            })
+            current_day += timedelta(days=1)
+
+    # Create a DataFrame with daily rows
+    df_daily = pd.DataFrame(rows)
+
+    # 3) Sum across all overlapping invoices per day
+    df_by_day = (
+        df_daily
+        .groupby("date", as_index=False)
+        .agg({
+            "daily_actual": "sum",
+            "daily_estimated": "sum"
+        })
+    )
+
+    # 4) Optionally group by month (or keep daily). We'll group by month:
+    df_by_day["year_month"] = df_by_day["date"].dt.to_period("M").dt.to_timestamp()
+    df_monthly = (
+        df_by_day
+        .groupby("year_month", as_index=False)
+        .agg({
+            "daily_actual": "sum",
+            "daily_estimated": "sum"
+        })
+        .rename(columns={
+            "daily_actual": "actual_volume",
+            "daily_estimated": "estimated_volume"
+        })
+    )
+
+    # 5) Plot a time series on a true time scale
+    #    We'll create a date column for Altair, e.g. the 1st of each month
+    df_monthly["month_date"] = df_monthly["year_month"]
+
+    # Melt to long format for Altair
+    df_melted = df_monthly.melt(
+        id_vars="month_date",
+        value_vars=["actual_volume", "estimated_volume"],
+        var_name="Hacim Türü",
+        value_name="Hacim (m³)"
+    )
+
+    # Build your chart - let's do lines so partial overlaps
+    # become a smooth time series
+    chart = (
+        alt.Chart(df_melted)
+        .transform_calculate(
+            yeni_hacim_turu="""
+        datum["Hacim Türü"] == "actual_volume" ? "Gerçek Tüketim" :
+        datum["Hacim Türü"] == "estimated_volume" ? "Su İhtiyacı" :
+        datum["Hacim Türü"]
+        """
         )
-        # Convert for sorting
-        chart_df["start_read_datetime"] = pd.to_datetime(chart_df["start_read_date"])
-
-        # Melt for "Gerçek" vs. "Tahmin"
-        chart_data = chart_df.melt(
-            id_vars=["Invoice Period", "start_read_datetime", "name"],
-            value_vars=["volume", "estimated_volume"],
-            var_name="Type",
-            value_name="Volume (m³)"
+        .mark_line(point=alt.OverlayMarkDef(filled=True, size=50), interpolate="monotone")
+        .encode(
+            x=alt.X("month_date:T", title="Tarih (Ay)", axis=alt.Axis(format="%Y-%m", labelAngle=-45)),
+            y=alt.Y("Hacim (m³):Q", title="Toplam Tüketim (m³)"),
+            color=alt.Color(
+                "yeni_hacim_turu:N",
+                title="",
+                legend=alt.Legend(
+                    labelFontSize=12,   # smaller label text
+                    titleFontSize=14,   # smaller title text
+                    orient="top-right"  # change legend position if desired
+                )
+            ),
+            tooltip=[
+                alt.Tooltip("month_date:T", title="Tarih", format="%Y-%m"),
+                alt.Tooltip("Hacim (m³)", title="Miktar", format=",.0f")
+            ]
         )
+        .properties(width="container", height=400)
+    )
 
-        # Sort invoice periods in descending order based on start_read_datetime
-        sorted_periods = (
-            chart_df
-            .sort_values("start_read_datetime", ascending=False)["Invoice Period"]
-            .unique()
-            .tolist()
-        )
+    st.altair_chart(chart, use_container_width=True)
 
-        bar_chart = (
-            alt.Chart(chart_data)
-            .mark_bar()
-            .encode(
-                y=alt.Y(
-                    "Invoice Period:N",
-                    sort=sorted_periods,
-                    axis=alt.Axis(
-                        title="Fatura Dönemi",
-                        labelLimit=1000,
-                        labelOverlap=False,
-                        values=sorted_periods  # Force all labels
-                    )
-                ),
-                x=alt.X("Volume (m³):Q", title="Tüketim (m³)"),
-                color=alt.Color("Type:N", title="Volume Type"),
-                tooltip=[
-                    alt.Tooltip("name", title="Park Name"),
-                    alt.Tooltip("start_read_datetime:T", title="Start Date"),
-                    alt.Tooltip("Invoice Period:N", title="Period"),
-                    alt.Tooltip("Type:N", title="Type"),
-                    alt.Tooltip("Volume (m³):Q", title="Volume")
-                ]
-            )
-            .properties(width="container", height=500)
-        )
-
-        st.altair_chart(bar_chart, use_container_width=True)
-
-# ========= FATURALAR Tab =========
-with tabs[1]:
-    with st.container():
-        st.markdown("<h2 style='text-align: center;'>Faturalar</h2>", unsafe_allow_html=True)
-        # We only color the "Fark (%)" column
-        styled_df = display_df.style.background_gradient(
-            subset=["Fark (%)"],  # Only color percentage difference
-            cmap='coolwarm'
-        )
-        st.dataframe(styled_df, height=500)
+with tab2:
+    # st.subheader("Fatura Kayıtları")
+    # Renkli arkaplan sadece Fark (%) üzerinde
+    styled_df = display_df.style.background_gradient(subset=["Gerçek (m³)", "Tahmin (m³)","Fark (m³)","Fark (%)"], cmap='coolwarm')
+    st.dataframe(styled_df, use_container_width=True, hide_index=True)
+    # st.dataframe(display_df.set_index("Park Adı").style.background_gradient(subset=["Fark (m³)", "Fark (%)"], cmap='coolwarm'), use_container_width=True)
