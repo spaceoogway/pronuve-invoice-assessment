@@ -4,7 +4,7 @@ import altair as alt
 from datetime import datetime
 
 # Load and Prepare Data
-invoice_df = pd.read_csv("../data/ca_invoice.csv")[
+invoice_df = pd.read_csv("data/ca_invoice.csv")[
     [
         "name",
         "grass_area",

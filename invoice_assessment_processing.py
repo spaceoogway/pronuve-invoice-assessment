@@ -1,4 +1,3 @@
-# %%
 import pandas as pd
 from util import similarity, weather
 
@@ -11,7 +10,6 @@ df_ca_green_area = df_ca_green_area[
 # Convert "SIRA NO" to integer type
 df_ca_green_area["SIRA NO"] = df_ca_green_area["SIRA NO"].astype(int)
 
-# %%
 # Import all invoices
 df_invoice = pd.read_csv("data/all_invoice.csv")
 # Get only CANKAYA invoices
@@ -25,14 +23,12 @@ df_ca_invoice["name"] = (
 # Strip whitespace from column names
 df_ca_invoice.columns = df_ca_invoice.columns.str.strip()
 
-# %%
 # Convert date columns to datetime.date
 df_ca_invoice["start_read_date"] = pd.to_datetime(
     df_ca_invoice["start_read_date"]
 ).dt.date
 df_ca_invoice["end_read_date"] = pd.to_datetime(df_ca_invoice["end_read_date"]).dt.date
 
-# %%
 # Get matching names from two dataframes
 df_ca_name_similarity = similarity.best_matches(
     list(df_ca_green_area["PARK ADI"].unique()), list(df_ca_invoice["name"].unique())
@@ -59,26 +55,27 @@ df_ca_matched.rename(
     columns={"name_2": "name_invoice", "ÇİM ALAN": "grass_area"}, inplace=True
 )
 
-# %%
 # Create a range of dates for water estimates
 date_range = pd.date_range(start="2015-01-01", end="2024-01-10")
 dates_without_time = date_range.date
 df_date = pd.DataFrame({"date": dates_without_time})
 
-# %%
 from functools import partial
 
 # Create a partial function for water estimation
 partial_estimate = partial(
-    weather.estimate_water_needs, lat=39.9208, lon=32.8541, kc=1, elevation=900
+    weather.estimate_water_needs, lat=39.9208, lon=32.8541, kc=0.8, elevation=900
 )
 
 df_water_need = partial_estimate(
     start_date=df_date.date.iloc[0], end_date=df_date.date.iloc[-1], park_area=1
 )[["date", "water_need_m3"]]
 
+# Make all the water_need_m3 data only when it's the watering season (04-10)
+df_water_need["water_need_m3"] = df_water_need.apply(
+    lambda row: row["water_need_m3"] if 4 <= row["date"].month <= 10 else 0, axis=1
+)
 
-# %%
 def calculate_total_water(row, water_data):
     """For a given invoice row, sum water_need_m3 for dates between start and end."""
     start_date = row["start_read_date"]
@@ -94,7 +91,6 @@ df_ca_invoice["water_need_m3"] = df_ca_invoice.apply(
     partial_calculate_total_water, axis=1
 )
 
-# %%
 # 4) Merge df_ca_invoice with our matched DataFrame (left join on 'name' vs 'name_invoice')
 df_ca_invoice = df_ca_invoice.merge(
     df_ca_matched[["name_invoice", "grass_area"]],
