@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from datetime import date, timedelta
+import calendar
 from dateutil import rrule
 
 # Make sure this is the very first Streamlit call for wide layout!
@@ -70,6 +71,7 @@ with col_logo:
 
 with col1:
     unique_parks = invoice_df["name"].unique().tolist()
+    # "ÇANKAYA" is treated as the “all parks” option
     if "ÇANKAYA" not in unique_parks:
         unique_parks.insert(0, "ÇANKAYA")
     park_index = unique_parks.index("ÇANKAYA")
@@ -97,6 +99,7 @@ if start_filter > end_filter:
     st.warning("Başlangıç ayı, bitiş ayından sonra. Tarihler değiştirildi.")
     start_filter, end_filter = end_filter, start_filter
 
+# --- Park bazında filtreleme ---
 if selected_park == "ÇANKAYA":
     park_df = invoice_df.copy()
 else:
