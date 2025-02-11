@@ -2,59 +2,18 @@ import calendar
 import streamlit as st
 import pandas as pd
 import altair as alt
-
-from datetime import date
+from datetime import date, timedelta
 from dateutil import rrule
-from datetime import timedelta
 
-# -- Sayfa Başlığı ve Geniş Layout --
+# Make sure this is the very first Streamlit call for wide layout!
 st.set_page_config(page_title="Su Tüketimi Panosu", layout="wide")
 
-# -- Hide the top-left “arrow” (sidebar collapse) --
-st.markdown(
-    """
-    <style>
-    [data-testid="collapsedControl"] {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# Import and inject custom CSS styling.
+from style import inject_css, inject_logo
 
-# -- Minimal CSS: sadece arkaplan ve font --
-st.markdown(
-    """
-<style>
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #f9f9f9;
-}
-</style>
-""",
-    unsafe_allow_html=True,
-)
+inject_css()
 
-# Hide sidebar, hamburger menu, header, footer
-st.markdown(
-    """
-    <style>
-    section[data-testid="stSidebar"] {
-        display: none;
-    }
-    #MainMenu {visibility: hidden;}
-    header {visibility: hidden;}
-    footer {visibility: hidden;}
-    .block-container {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-# -- Veri Yükleme --
+# -- Data Loading and Preprocessing --
 invoice_df = pd.read_csv(
     "data/ca_invoice.csv",
     usecols=[
@@ -102,7 +61,12 @@ def get_month_index(yyyy_mm: str) -> int:
     return 0
 
 
-col1, col2, col3 = st.columns(3)
+# -- Top Row: Logo and Selection Controls --
+# Create four columns: one narrow for the logo and three for the select boxes.
+col_logo, col1, col2, col3 = st.columns([1, 3, 3, 3])
+
+with col_logo:
+    inject_logo()
 
 with col1:
     unique_parks = invoice_df["name"].unique().tolist()
@@ -120,9 +84,7 @@ with col2:
 with col3:
     end_default = get_month_index("2023-09")
     end_mo = st.selectbox(
-        "Bitiş Ay/Yıl",
-        [format_month(m) for m in all_months],
-        index=end_default,
+        "Bitiş Ay/Yıl", [format_month(m) for m in all_months], index=end_default
     )
 
 start_year, start_month = map(int, start_mo.split("-"))
@@ -170,7 +132,6 @@ total_diff = filtered_df["difference"].sum()
 invoice_count = len(filtered_df)
 variance_percent = (total_diff / total_estimated * 100) if total_estimated != 0 else 0
 
-# Toplam Yeşil Alan hesaplama
 if selected_park == "ÇANKAYA":
     unique_parks_all = invoice_df.drop_duplicates(subset="name")
     grass_area_total = unique_parks_all["grass_area"].sum()
@@ -180,9 +141,12 @@ else:
     )
     grass_area_total = unique_park["grass_area"].iloc[0] if not unique_park.empty else 0
 
+# -- Tabs for the Dashboard --
 tab1, tab2 = st.tabs(["Genel Bakış", "Faturalar"])
 
+# ---------- TAB 1: Genel Bakış ----------
 with tab1:
+    # KPI Metrics in card-styled containers (they pick up the CSS defined above)
     kpi_cols = st.columns(5)
     with kpi_cols[0]:
         st.metric("Toplam Tüketim (m³)", f"{total_actual:,}", help="Gerçek su tüketimi")
@@ -197,7 +161,6 @@ with tab1:
             "Toplam Fark (m³)", f"{total_diff:,}", help=f"{variance_percent:.1f}% sapma"
         )
     with kpi_cols[3]:
-        # Removed the chained .metric("Fatura Sayısı", ...)
         st.metric(
             "Toplam Yeşil Alan (m²)",
             f"{grass_area_total:,}",
@@ -206,7 +169,7 @@ with tab1:
     with kpi_cols[4]:
         st.metric("Fatura Sayısı", f"{invoice_count:,}", help="Analiz edilen kayıtlar")
 
-    # Günlük bazlı time-series grafiği (aylık toplanmış)
+    # Build the Altair time-series chart (its container is styled as a card)
     chart_df = filtered_df.copy()
     chart_df["start_read_date"] = pd.to_datetime(chart_df["start_read_date"])
     chart_df["end_read_date"] = pd.to_datetime(chart_df["end_read_date"])
@@ -220,7 +183,6 @@ with tab1:
             continue
         daily_actual = row["volume"] / days_in_invoice
         daily_estimated = row["estimated_volume"] / days_in_invoice
-
         current_day = start
         while current_day <= end:
             rows.append(
@@ -289,9 +251,9 @@ with tab1:
         )
         .properties(width="container", height=400)
     )
-
     st.altair_chart(chart, use_container_width=True)
 
+# ---------- TAB 2: Faturalar ----------
 with tab2:
     styled_df = display_df.style.background_gradient(
         subset=["Gerçek (m³)", "Tahmin (m³)", "Fark (m³)", "Fark (%)"], cmap="coolwarm"
