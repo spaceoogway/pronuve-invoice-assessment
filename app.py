@@ -1,10 +1,9 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-from datetime import date
+from datetime import date, timedelta
 import calendar
 from dateutil import rrule
-from datetime import timedelta
 
 # -- Sayfa Başlığı ve Geniş Layout --
 st.set_page_config(page_title="Su Tüketimi Panosu", layout="wide")
@@ -84,10 +83,12 @@ def get_month_index(yyyy_mm: str) -> int:
             return i
     return 0
 
+# --- Global Filters ---
 col1, col2, col3 = st.columns(3)
 
 with col1:
     unique_parks = invoice_df["name"].unique().tolist()
+    # "ÇANKAYA" is treated as the “all parks” option
     if "ÇANKAYA" not in unique_parks:
         unique_parks.insert(0, "ÇANKAYA")
     park_index = unique_parks.index("ÇANKAYA")
@@ -119,6 +120,7 @@ if start_filter > end_filter:
     st.warning("Başlangıç ayı, bitiş ayından sonra. Tarihler değiştirildi.")
     start_filter, end_filter = end_filter, start_filter
 
+# --- Park bazında filtreleme ---
 if selected_park == "ÇANKAYA":
     park_df = invoice_df.copy()
 else:
@@ -158,8 +160,12 @@ else:
     unique_park = invoice_df[invoice_df["name"] == selected_park].drop_duplicates(subset="name")
     grass_area_total = unique_park["grass_area"].iloc[0] if not unique_park.empty else 0
 
-tab1, tab2 = st.tabs(["Genel Bakış", "Faturalar"])
+# --- Update Tabs to Include the New Page ---
+tab1, tab2, tab3, tab4 = st.tabs(["Genel Bakış", "Faturalar", "Kötü Performans", "Su İsrafı"])
 
+##############################################
+#           Tab 1: Genel Bakış               #
+##############################################
 with tab1:
     kpi_cols = st.columns(5)
     with kpi_cols[0]:
@@ -169,7 +175,6 @@ with tab1:
     with kpi_cols[2]:
         st.metric("Toplam Fark (m³)", f"{total_diff:,}", help=f"{variance_percent:.1f}% sapma")
     with kpi_cols[3]:
-        # Removed the chained .metric("Fatura Sayısı", ...)
         st.metric("Toplam Yeşil Alan (m²)", f"{grass_area_total:,}", help="Seçilen parkın toplam yeşil alanı")
     with kpi_cols[4]:
         st.metric("Fatura Sayısı", f"{invoice_count:,}", help="Analiz edilen kayıtlar")
@@ -257,9 +262,116 @@ with tab1:
 
     st.altair_chart(chart, use_container_width=True)
 
+##############################################
+#             Tab 2: Faturalar               #
+##############################################
 with tab2:
     styled_df = display_df.style.background_gradient(
         subset=["Gerçek (m³)", "Tahmin (m³)", "Fark (m³)", "Fark (%)"],
         cmap='coolwarm'
     )
     st.dataframe(styled_df, use_container_width=True, hide_index=True)
+
+##############################################
+#         Tab 3: Kötü Performans             #
+##############################################
+with tab3:
+    st.header("Kötü Performanslı Parklar")
+    st.markdown(
+        "Aşağıda, yetersiz su tüketimi ve aşırı su tüketimi performansına sahip parklar gösterilmektedir. "
+        "Bu analiz için tarih filtresi uygulanmıştır; tüm parklar dikkate alınmaktadır."
+    )
+
+    # For worst performance analysis, ignore the park selection and use all parks
+    worst_df = invoice_df[
+        (invoice_df["start_read_date"] >= start_filter) &
+        (invoice_df["end_read_date"] <= end_filter)
+        ].copy()
+
+    # Aggregate data per park
+    agg_df = worst_df.groupby("name").agg({
+        "volume": "sum",
+        "estimated_volume": "sum"
+    }).reset_index()
+
+    agg_df["difference"] = agg_df["volume"] - agg_df["estimated_volume"]
+    agg_df["difference_pct"] = (
+            (agg_df["difference"] / agg_df["estimated_volume"]) * 100
+    ).replace([float("inf"), float("-inf")], 0).fillna(0)
+
+    # Separate parks into under watered (difference_pct negative) and over watered (difference_pct positive)
+    under_df = agg_df[agg_df["difference_pct"] < 0].copy()
+    over_df = agg_df[agg_df["difference_pct"] > 0].copy()
+
+    # Sort the data so that the worst performers appear at the top
+    under_df = under_df.sort_values("difference_pct", ascending=True)  # Most negative first
+    over_df = over_df.sort_values("difference_pct", ascending=False)   # Highest positive first
+
+    st.subheader("Yetersiz Su Tüketimi")
+    if not under_df.empty:
+        under_chart = alt.Chart(under_df).mark_bar().encode(
+            x=alt.X("difference_pct:Q", title="Fark (%)", axis=alt.Axis(format=".2f")),
+            y=alt.Y("name:N", sort=alt.SortField(field="difference_pct", order="ascending"), title="Park"),
+            tooltip=[
+                alt.Tooltip("name:N", title="Park"),
+                alt.Tooltip("volume:Q", title="Gerçek Tüketim (m³)", format=",.0f"),
+                alt.Tooltip("estimated_volume:Q", title="Tahmin (m³)", format=",.0f"),
+                alt.Tooltip("difference_pct:Q", title="Fark (%)", format=".2f")
+            ]
+        ).properties(width=700, height=300, title="Yetersiz Su Tüketimi")
+        st.altair_chart(under_chart, use_container_width=True)
+    else:
+        st.info("Yetersiz su tüketimi gösteren park bulunamadı.")
+
+    st.subheader("Aşırı Su Tüketimi")
+    if not over_df.empty:
+        over_chart = alt.Chart(over_df).mark_bar().encode(
+            x=alt.X("difference_pct:Q", title="Fark (%)", axis=alt.Axis(format=".2f")),
+            y=alt.Y("name:N", sort=alt.SortField(field="difference_pct", order="descending"), title="Park"),
+            tooltip=[
+                alt.Tooltip("name:N", title="Park"),
+                alt.Tooltip("volume:Q", title="Gerçek Tüketim (m³)", format=",.0f"),
+                alt.Tooltip("estimated_volume:Q", title="Tahmin (m³)", format=",.0f"),
+                alt.Tooltip("difference_pct:Q", title="Fark (%)", format=".2f")
+            ]
+        ).properties(width=700, height=300, title="Aşırı Su Tüketimi")
+        st.altair_chart(over_chart, use_container_width=True)
+    else:
+        st.info("Aşırı su tüketimi gösteren park bulunamadı.")
+
+##############################################
+#          Tab 4: Su İsrafı (Wasted Water)   #
+##############################################
+with tab4:
+    st.header("Park'ta Su İsrafı Maliyeti")
+    st.markdown(
+        "Sadece su israfına yol açan (gerçek tüketim > tahmin) faturalar dikkate alınmıştır. "
+        "Atık su maliyeti, su fazlası miktarının 20 TL/m³ ile çarpılmasıyla hesaplanır."
+    )
+    # Filter for invoices where actual consumption is greater than estimated
+    wasted_df = filtered_df[filtered_df["difference"] > 0].copy()
+
+    if wasted_df.empty:
+        st.info("İlgili tarihlerde su israfına ilişkin bir fatura bulunmamaktadır.")
+    else:
+        # Calculate the wasted water cost in TL
+        wasted_df["wasted_tl"] = wasted_df["difference"] * 20
+        total_wasted_tl = wasted_df["wasted_tl"].sum()
+        st.metric("Toplam Su İsrafı Maliyeti (TL)", f"{total_wasted_tl:,.0f}")
+
+        # Convert the end date to datetime and aggregate by month
+        wasted_df["end_read_date"] = pd.to_datetime(wasted_df["end_read_date"])
+        wasted_df["year_month"] = wasted_df["end_read_date"].dt.to_period("M").dt.to_timestamp()
+        wasted_group = wasted_df.groupby("year_month", as_index=False).agg({"wasted_tl": "sum"})
+
+        # Create a red line chart for wasted TL over time
+        chart_waste = alt.Chart(wasted_group).mark_line(color="red").encode(
+            x=alt.X("year_month:T", title="Tarih (Ay)", axis=alt.Axis(format="%Y-%m", labelAngle=-45)),
+            y=alt.Y("wasted_tl:Q", title="Su İsrafı Maliyeti (TL)"),
+            tooltip=[
+                alt.Tooltip("year_month:T", title="Tarih", format="%Y-%m"),
+                alt.Tooltip("wasted_tl:Q", title="Maliyet (TL)", format=",.0f")
+            ]
+        ).properties(width=700, height=400)
+
+        st.altair_chart(chart_waste, use_container_width=True)
