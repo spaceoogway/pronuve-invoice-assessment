@@ -3,7 +3,6 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from datetime import date, timedelta
-import calendar
 from dateutil import rrule
 
 # Make sure this is the very first Streamlit call for wide layout!
