@@ -71,16 +71,20 @@ df_water_need = partial_estimate(
     start_date=df_date.date.iloc[0], end_date=df_date.date.iloc[-1], park_area=1
 )[["date", "water_need_m3"]]
 
-# Make all the water_need_m3 data only when it's the watering season (04-10)
-df_water_need["water_need_m3"] = df_water_need.apply(
-    lambda row: row["water_need_m3"] if 4 <= row["date"].month <= 10 else 0, axis=1
-)
+# Ensure the 'date' column is a datetime object
+df_water_need["date"] = pd.to_datetime(df_water_need["date"])
 
+# Update lambda condition to reflect the desired watering season.
+# Use 4 instead of 6 if you intend the season to start in April.
+df_water_need["water_need_m3"] = df_water_need.apply(
+    lambda row: row["water_need_m3"] if 6 <= row["date"].month <= 10 else 0,
+    axis=1
+)
 
 def calculate_total_water(row, water_data):
     """For a given invoice row, sum water_need_m3 for dates between start and end."""
-    start_date = row["start_read_date"]
-    end_date = row["end_read_date"]
+    start_date = pd.to_datetime(row["start_read_date"])
+    end_date = pd.to_datetime(row["end_read_date"])
     mask = (water_data["date"] >= start_date) & (water_data["date"] <= end_date)
     total_water = water_data.loc[mask, "water_need_m3"].sum()
     return total_water

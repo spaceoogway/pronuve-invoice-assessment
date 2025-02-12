@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 from datetime import datetime, timedelta
 
-
 # =============================================================================
 # Dummy Data Function for Park Alarms
 # =============================================================================
@@ -63,7 +62,6 @@ def load_park_alarm_data():
     df = pd.DataFrame(data)
     df["Timestamp"] = pd.to_datetime(df["Timestamp"])
     return df
-
 
 # =============================================================================
 # Park Alarms Page (Maximum Information, No Sliders)
@@ -151,7 +149,6 @@ def park_alarms():
         """
     )
 
-
 # =============================================================================
 # Main Function (Standalone Park Alarms Page)
 # =============================================================================
@@ -160,7 +157,6 @@ def main():
     page = st.sidebar.radio("Select Page", ["Park Alarms"])
     if page == "Park Alarms":
         park_alarms()
-
 
 if __name__ == "__main__":
     main()
