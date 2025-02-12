@@ -81,6 +81,7 @@ df_water_need["water_need_m3"] = df_water_need.apply(
     axis=1
 )
 
+
 def calculate_total_water(row, water_data):
     """For a given invoice row, sum water_need_m3 for dates between start and end."""
     start_date = pd.to_datetime(row["start_read_date"])
