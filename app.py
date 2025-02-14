@@ -16,7 +16,7 @@ inject_css()
 
 # -- Data Loading and Preprocessing --
 invoice_df = pd.read_csv(
-    "data/ca_invoice.csv",
+    "data/final/ca_invoice.csv",
     usecols=[
         "name",
         "grass_area",
