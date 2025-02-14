@@ -1,0 +1,495 @@
+SIRA NO,PARK ADI,ADRES,MAHALLE,ÇİM ALAN,SERT ZEMİN,Ç.O.A,ÇİÇEKLİK,YÜRÜME YOLLARI,Unnamed: 9,SPOR ALANLARI,Unnamed: 11,Unnamed: 12,BİSİKLET YOLU,HAVUZ,AĞAÇLIK ALAN,DİĞER ALANLAR,TOPLAM ALAN
+1,Anıtpark ,M.Fevzi Çakmak Caddesi Akdeniz cad. ,Bahçelievler,6760,7346,585,37,,,,,,,200,,261,15189
+2,Kuğulupark,Tunalı Hilmi  cad.,R.Oguz Arık,2825,3090,500,195,,,,,,,666,467,611,8354
+3,Karum Ç.O.A,İran Caddesi Karum İş Merkezi önü,Gop,,,450,,,,,,,,,,,450
+4,Uğur Mumcu parkı - Giriş Yolu,Öğretmenler Cad.Çankaya Ünv.Yanı,İşçi Blokları,2470,,,,1120,,,,,,,,,3590
+5,Ahlatlıbel Atatürk Parkı,Şehit Savcı Mehmet Selim Kiraz Bulvarı,Ahlatlıbel,41000,13800,2000,,,1400,543,,,276,460,,,59479
+6,İsmet İnönü Parkı(2017),451 cad. - 435 cad. ,Birlik,33000,6180,1262,,,,,115,,684,2235,,12603,56079
+7,Zafer Park (2018),451 cad.- 429 sok. arası  ,Birlik,43500,11397,1540,,,2083,1581,100,,2082,1400,,4817,68500
+8,Lozanpark (2014),Kahire Cad.,Birlik,16718,9528,1630,75,1275,1152,1244,,2986,,,6240,2552,43400
+9,Ahmed Arif Parkı,Sokullu Cad. ,Öveçler,9200,3790,223,581,,,390,,,,412,,20,14616
+10,Bademlidere Cumhuriyet Parkı(2023),"Kırkkonaklar 358 sokak, Bademlidere 223 sokak",Kırkkonaklar,23189,24925,2087,,,,500,,,5532,467,,201300,258000
+11,Fen İşleri Nizamiye,,,,,,,,,,,,,,,,
+1,Bahçe Sokak Çocuk Parkı,Bahçe sokak ,Emek,345,95,100,,,,,,,,,130,,670
+2,Necil Kazım Akses Parkı,12 sk. ile 18 sk. ,Emek,498,197,335,,,,,50,,,,,31,1111
+3,Ahmet Yılmaz Parkı,15 Cad. sk 20 sk ,Emek,625,330,175,,,,,,,,,,7,1137
+4,Fryderic Chopin Parkı,Bosna Hersek Cad. ,Emek,3030,604,125,225,,,,,,,,,12,3996
+5,Aydın Sönmez Parkı,1.sokak ile 2 sk ,Emek,785,105,220,,,,,,,,,,,1110
+6,Yunus Emre Parkı,Bişkek cd.ile Kırım cd.,Emek,4847,1236,,70,,385,,,188,,115,,11,6852
+7,Bedri Koraman Parkı,Kırım Cad.ile M.Abdülcemil Kırımoğlu Sok.,Emek,530,283,,,,,110,,,,,,,923
+8,İsrail evleri ,Abdullah GabdullahTukaay Caddesi,Emek,,430,,48,,,,,,,22,,,500
+9,Bahriye Üçok Parkı,Bahriye Üçok Cad. ile Dögol cad. ,Bahçelievler,1410,145,,20,,,,, ,,,,834,2409
+10,Eser Park 1-2,Akdeniz Caddesi         ,Bahçelievler,7160,1632,595,25,,,,,,1155,58,,110,10735
+11,Prof Dr. Şükrü Elçin Parkı,Taşkent cad. H. Temel Kuğuoğlu sk. ,Bahçelievler,,75,,,,,,,,,,815,15,905
+12,Metin Oktay Parkı,Cengizhan cad.ile 47 sok.,Bahçelievler,2803,1145,390,15,,,124,160,,,,,155,4792
+13,Yılmaz Güney Parkı,70 sk.,Bahçelievler,632,189,238,27,,,,,,,,,34,1120
+14,Özveren Parkı,Özveren Sk. İle Necati bey cad.,Maltepe,1607,449,515,,,,,,,,,,10,2581
+15,Namık Kemal,Necatibey Cad.ile Yahya Galip Cd.köşesi,Namık Kemal,880,350,425,,,,,,,,,,,1655
+16,Maltepe Müdüriyet,Şehit Gönenç Cad. Süleymanbey sk ,Maltepe,4490,4368,220,,,,135,,,,,688,6293,16194
+17,Semih Balcıoğlu Parkı,Ş.Gönenç cad ile Özveren sokak ,Maltepe,6840,2055,615,,,,350,,,,,,124,9984
+18,Umut Park,Süleyman Bey Sokak,Maltepe,5900,2180,,60,,,,,,,100,,125,8365
+19,Ördekli Park,Süleyman Bey Sokak,Maltepe,3379,1100,390,,,,580,165,,,54,,42,5710
+20,İlhan Selçuk Parkı,Gençlik cad. Bitiştiren sk. ,Maltepe,1128,240,,23,,,,,32,,,,,1423
+21,Işık Sokak,Işık Sk. Tuncer sk. ,Maltepe,206,90,34,,,,,,,,,,,330
+22,Hadiye Tuncer Parkı,Şerefli Sok. Turgut Reis cad. ,Tandoğan,175,179,236,,,,,,,,,,26,616
+23,Devrim Şehidi Kubilay Parkı,84. Cad.İlk Sk ,Yücetepe,640,165,,,,,,,,,,,,805
+24,Ş.J.Yb.Alim Yılmaz Parkı,86.sokak ,Yücetepe,1492,295,,,,,,,,,,,,1787
+25,Fazıl Reyhan Parkı,85.sokak ,Yücetepe,896,304,300,,,,,,,,,,37,1537
+26,Basın Park,Strazburg cad arası ile Toros sk.,Eti,1806,930,300,100,,,40,,,,,,182,3358
+27,Hanımeli Sokak ,Hanımeli sk. Lale sk. ,Korkut Reis,365,167,280,,,,,,,,,,36,848
+28,Ören Sokak,Ören sokak,Tandoğan,1060,1137,,,,,,,,,,,,2197
+29,M.Yücel Özbilgin Parkı,1384 sk.ile Barış Manço cd.,Oguzlar,1000,528,420,5,,,,,,,,,52,2005
+30,Özdemir Özok Parkı,1409 sk.ile 1410 sk.,Balgat,762,200,268,16,,,170,58,,,,180,13,1667
+31,Necati Yurttakalan Parkı,1374 sk.ile 1370 sk.,Oguzlar,1011,193,178,,,,,,,,,,,1382
+32,Kırlangıç Parkı,1390 sk.ile 1392 sk.,Oguzlar,1443,340,560,,,,420,,,,,,46,2809
+33,Mehmet Yurtseven Parkı,Çetin Emeç Bulvarı C. Atuf Kansu cad. ,Oguzlar,2450,280,185,,,,,,,,35,,85,3035
+34,Hoş Görü Parkı,Çetin Emeç Bulvarı ile C.Atuf Kansu cad ,Ehlibeyt,2667,420,,,,,,,,,,,148,3235
+35,Nasuh Akar Parkı,Türkocağı cad.1399 sokak,Nasuh Akar,803,95,83,,,,,,,,,,26,1007
+36,İsmet Sezgin Parkı,1400 Sok.1403 sok.,Nasuh Akar,522,148,251,,,220,,,72,,6,,,1219
+37,Ahmet Taner Kışlalı Spor Salonu,Türkocağı Caddesi ,Nasuh Akar,2529,3222,,,,,,,,,,,2506,8257
+38,Güneş Ç.O.A.,C.Atuf Kansu Cd-Kameraman Fatih Çotur sk. ,Ehlibeyt,974,166,355,,,,,,,,,,30,1525
+39,Seyyid Ahmet Arvasi Parkı,Cevizlidere cad-1242  cd  ,Ehlibeyt,625,728,,31,,,,,,,8,,,1392
+40,Ersin Çıldır Parkı,Cevizlidere Cad. 1267 sk ,Ehlibeyt,2704,1316,134,15,,,,,406,,,,176,4751
+41,Cengiz Aytmatov,Ceyhun Atuf Kansu Cd-1242 cad. kesişimi,Ehlibeyt,4222,1194,499,,,517,,,94,,,,165,6691
+1,Mustafa Gedik,Başçavuş Sk.- Ballıbaba Sk. kesişimi,Tınaztepe,435,136,155,,,,,,,,,,12,738
+2,Afacan Parkı,Ballıbaba SK.,Doğuş,538,230,80,5,,,32,,,,,,37,922
+3,Mustafa Pekcan Parkı,Reşat Galip - Esat cad. kesişimi,Esat,1610,260,,,,,,,,,,,52,1922
+4,Ali İlhan Türker Parkı,Bülbülderesi cad. ,Esat,425,226,160,,,,,,,,,,,811
+5,Ali Ekber Çiçek Parkı     ,Bülbülderesi cad. ,Esat,460,335,185,,,,,,,,5,,25,1010
+6,Koca Yusuf Parkı,Bülbülderesi cad.,M.Ertugrul,562,445,,,,,642,,85,,,,,1734
+7,Muhtar Ahmet Narlı Parkı,Bülbülderesi cad.- Esat cad.kesişimi ,M.Ertugrul,420,72,,,,,,,,,,,,492
+8,Ali Kitapçı Parkı,Reşat galip - Esat cad. kersişimi,100.Yıl,1350,917,,,,,383,,100,,,,,2750
+9,Anneannem Parkı,Dolunay sk - Gökçe sk  kesişimi,100.Yıl,375,122,245,,,,,,,,,,5,747
+10,Gazeteci Nahit Duru Parkı,Ziya Oralay Cad.,Aşık Paşa,3340,455,325,,,,295,,,,,,5,4420
+11,Türkmeneli Erbil Parkı,Açın cad. 244 sk,Aşık Paşa,1678,275,225,,,,,,,,,,,2178
+12,Boztepe Parkı (2022),Şemsettin Günaltay Caddesi,Aşıkpaşa,316,405,250,,,,,,65,,,,,1036
+13,Kardeş Parkı,Şemsettin Günaltay Cad.,Bademlidere,924,171,150,,,,,,,,,,110,1355
+14,Zafertepe Parkı,174 sok. - 175. sok. ,Göktürk,504,159,245,,,,,,,,,,29,937
+15,Louis Brailla Parkı,Seyran caddesi,Seyran,180,90,75,,,,,50,,,,,,395
+16,Muhlis Akarsu Parkı,Park ve Billur Sk. ,Murat,835,126,250,,,,80,,,,,,43,1334
+17,Şht.Jan.Üstteğmen Harun Parlak Parkı,Yavuzevler sok. ile sivrihisar sk. ,Umut,,175,,,,,,,,,,550,,725
+18,Özgürlük Parkı,Tekman cad ile narman  sokak ,Metin Oktay,1210,591,250,,,,,,,,,,102,2153
+19,Güneş Parkı(2023),196 sokak Güneş Kreşi yanı,Metin Oktay,195,185,377,,,,,,,,,,,757
+20,Aşıklar Parkı,Tekman cad. ile 214 sk ,Aşık Paşa,1658,547,273,,,,,,67,,,,,2545
+21,Alim Biçer Parkı,Vedat Dalokay Cad- 275.sokak ,Bağcılar,204,58,,,,,,,,,,,,262
+22,Hasan Ali Yücel Parkı,Bayraklı Sk. Akhisar sk ,Bayraktar,2171,821,180,,,,180,,82,,,,,3434
+23,Sehergül Ateş Parkı,Açın cad .ile 276 sok ,Bağcılar,400,508,112,20,,,,,20,,,877,,1937
+24,Uğur Mumcu Parkı,Uğur Mumcu sokak ÇANKAYA,B.Esat,1197,413,,35,,,,,,,,,,1645
+25,Bayraktar Parkı,Gezegen Sk. İle Suna sk ,Bayraktar,870,174,185,,,,,,,,,,5,1234
+26,Koza sok,Koza sk. İle Gezegen sk. ,B.Esat,540,153,,,,,,,,,12,,18,723
+27,Konservatuar Parkı,Soysal Sk. ,Erzurum,2777,656,170,15,,,,,111,,,,68,3797
+28,Naim Süleymanoğlu Parkı,Dumlupınar Cad. Geçim sk ,Erzurum,1580,515,,,,,,,,,,,,2095
+29,Kutlugün Parkı(2014) ,Kutlugün sokak.,Cebeci,130,107,,,,,,,,,,,13,250
+30,Semra Ertem Parkı,Kutlugün sokak. ,Cebeci,430,120,160,,,,,,,,,,70,780
+31,Münzeviler Parkı ,İsmail Kılıç sk-Güney sk (Abidinpaşa köşkü altı),Ertugrul Gazi,720,330,60,,,,,,,,,,12,1122
+32,Şht. Ufuk Ünsal Parkı,Tanyeli sk.-Uzun Gemiciler sk. ,Cebeci,765,100,,,,,,,,,,,,865
+33,Muhammed Veysel Atılgan Parkı,Bafra sok.burç sok. ,Ertugrul Gazi,,373,32,,,,,,,,,190,,595
+34,50.Yıl Parkı,103. sok. ve 104 sk ,50.Yıl,2005,625,195,,,,,,,,,,,2825
+35,Abidin Paşa Köşkü,Münzeviler Cad.ile Şht. Hasan Karaca sk. ,Ertugrul Gazi,9595,4586,232,,,,,,,,,2864,1232,18509
+36,Aşıkpaşa Yeni Park,Sabah sk. İle Rüya sk. ,Aşıkpaşa,150,,100,,,,,,,,,,,250
+37,Çankaya Evi yanı ,115 Cad. ile 175 Sk.(Mimar sinan todam),Mimar Sinan,100,,100,,,,50,,,,,,,250
+38,Ali Kızıltuğ Parkı(2018),115.cad. 170. sok. ,Göktürk,754,687,150,7,,240,,,57,,,,,1895
+39,Özgürlük Meydanı Parkı,Bağlar Caddesi ile Belligün Sokak ,Esat,150,1220,510,,,600,,,520,,,,,3000
+40,İncesu Parkı,İncesu caddesi,İncesu,1410,1825,80,,,,95,,,,,,70,3480
+41,Mehmet Akif Ersoy Parkı,Libya Caddesi Çaldıran Sokak arası,Kültür,2247,985,680,,,,86,52,,,41,,113,4204
+42,Afyon Şehitleri Parkı,Çamkoru sok.Bükülü Sok. Tevekküller sk ,Topraklık,1495,427,218,,,,,,,,,,29,2169
+43,Kıbrıs Parkı,Mahmut EsatBozkurt Cad. Sinsin sk ,A.Topraklık,199,105,126,,,,,,,,,490,6,926
+44,Vedat Dalokay Evld.Müd.önü,Aksu cad. Prof. Dr. Nusret Fişek  cad. ,Fidanlık,1310,1510,,380,,,,,,,,,,3200
+45,Sevcihan Özveren Parkı,Sağlık 1Sokak -sakarya cad ,Fidanlık,474,252,165,,,,44,,,,,,60,995
+46,Adakale Sk. Yaya Yolu,Adakale sok.,Fidanlık ,808,1149,,,,,,,,,,,,1957
+47,Mehmet Rıfat Börekçi Parkı,Kızılırmak sk. Bankacı sk. ,Kültür,1942,419,,,,,,,,,34,,52,2447
+48,Uğur Böceği Parkı,Mahmut EsatBozkurt Cad. ,A.Topraklık,580,65,,,,,,,,,,,,645
+49,Tuzcular sok,Tuzcular sok,Topraklık,,,134,,,,,,,,,,,134
+50,Kızılay-Sakarya,Sakarya Caddesi,Kızılay,1500,3500,,,,,,,,,,,,5000
+51,Olgunlar Sokak Yaya Yolu,Atatürk Bulvarı - Karanfil Sok. ,Kızılay,,125,,,,,,,,,,,,125
+1,Cevizlidere Barış Parkı(2014),1235 Cadde ile 1256 Cadde ,Cevizlidere,2200,597,181,62,,429,181,,65,,,,,3715
+2,Servi Parkı,1282-1276 sk  (Yukarı Öveçler Mah.Muh.),Y.Öveçler,1730,397,170,,,,,,,,,,215,2512
+3,Şht.P.Asb.Kd.Bşç.Ömer Halisdemir Parkı(2017),1158 sk- 1159 Sk ,Huzur,400,200,53,,,,,,47,,,,270,970
+4,Şehit Fethi Sekin Parkı  (2017),1112 Cad. ile 1158 Sk. ,Huzur,2140,230,64,,,,,,89,,,,,2523
+5,Prof. Dr.Aziz Sancar Parkı(2017),1288 sok. 1238 cad. ,Y.Öveçler,7760,1930,340,,,410,,,80,,60,,,10580
+6,Prof.Dr.Alparslan Işıklı Parkı(2017),1324 cad.,A.Öveçler,1766,376,288,63,,352,,,570,,,,186,3601
+7,Ali İsmail Korkmaz Parkı,1226-1230 Sk. ,Y.Öveçler,1531,106,208,5,,333,,,68,,,,,2251
+8,Cevizli Park,1276 Sk.-1275 Sk ,Y.Öveçler,1943,463,176,52,,539,679,,,,,811,,4663
+9,Ahmet Atakan Parkı,1277 Sk.-1276 Sk. ,Y.Öveçler,1092,526,282,,,,,,254,,,,2,2156
+10,Çermik Parkı,1153 Sk.-1126 Sk. ,Huzur,285,307,,,,,,,170,,,650,2,1414
+11,Huzur Parkı,1143 Sk.-1142 Sk. ,Huzur,1572,291,490,,,,,,,,,,13,2366
+12,Ayşe Bilgilioğlu Parkı,1135 Sk.-1137 Sk. ,Huzur,870,284,500,5,,,,145,,,,,,1804
+13,Şht.Binbaşı Yavuz Başayar Parkı,1112 cad-1155 sok.,Huzur,1163,235,157,,,,,,44,,,,,1599
+14,Gazze Parkı(2014),1112 cadde 1066 cadde ,Huzur,2078,490,,,,516,,,153,,,,,3237
+15,Yeniden Yaşam Parkı,1235 cad.1283/1 sok ,Y.Öveçler,1996,375,351,60,,412,,,80,,,,,3274
+16,Şht.Onbaşı Üzeyir Tekindemir Parkı,1314 Cd. 1319 Sk. ,A.Öveçler,1173,619,440,,,,,,,,,,32,2264
+17,Medeni Yıldırım Parkı,1315 Sk. ,A.Öveçler,765,161,175,,,,,,,,,,,1101
+18,Canlar Parkı,1318 Sk. ,A.Öveçler,725,110,180,,,,,,,,,,,1015
+19,Nezihe Altıok Parkı,Kabil Cad.-1342 Sk. ,Öveçler,890,354,171,21,,,,,,,,,,1436
+20,Dz.Yb. Ali Tatar Parkı (2020),Lizbon Cad. 1309.Sokak ,Aşağı Öveçler,1423,840,,,,,324,,155,,,,93,2835
+21,Sağlıkçılar Parkı (2020),1238 cad-1235 Cad. 84. Sk. ,Y.Öveçler,7606,1697,572,,,,,,,,,36,,9911
+22,Edip Akbayram Parkı (2021),Ceyhun Atuf Kansu Cd.1249 Sk. ,Cevizlidere,1257,617,208,,,,486,368,85,,,,1024,4045
+23,Yunus Yazıcı Parkı (2021),Ceyhun Atuf Kansu Cd.1248 Sk. ,Cevizlidere,1257,733,305,,,,,,,,,,185,2480
+24,Şehit Piyade Yüzbaşı İ.Barış Yurtseven Parkı,(1042cad)eski 4.cad.1354-1355 sok,Öveçler,500,445,171,22,,,,,,,,1150,,2288
+25,Geçiş Parkı ,1042 cd.-1335 sk,Öveçler,,495,,,,,,,,,,990,,1485
+26,Şehit Er Mete İmrak Parkı,1047 - 1048 cadde arası,Ş.Cengiz Karaca,1552,460,212,,206,,,,93,,,,,2523
+27,Kemal Sunal Parkı,Dikmen Cad. ,Ş.Cengiz Karaca,1600,580,,55,346,,,,115,,95,909,,3700
+28,Ünal Temizyürek Parkı,1082(1057Cd)ile 1088 cadde ,Ata mah.,5650,930,403,,395,,380,,50,,,,192,8000
+29,Ata Yeşil Koridoru,1073 Cad. ile 1057 Cad. ,Ata. Mah.,11000,5940,438,105,,890,,,627,,275,7882,,27157
+30,Destina Peri Parlak Parkı (2016),1088 sok.,Ata ,2250,1280,190,,,,,,70,,,2778,,6568
+31,Şht.Jandarma Er Fatih Çaybaşı Parkı(2016),1296 Cad. 1297 Cad. ,A.Öveçler,1543,314,340,8,,,,,63,,,,,2268
+32,Hasret Gültekin Parkı(2016),1055. cad.,Ş. Cengiz Karaca ,1297,567,144,,,,,,90,,,,102,2200
+33,Şht.Üstteğmen Muharrem Kaleli Parkı,32. Cad.-1065 Cd ,Ata Mah.,3421,1878,324,,,,,,225,,,4459,17,10324
+34,Dursun Yollu Parkı,1067 Sk. 1068 Cad. ,Ata,2115,367,,,,,330,,,,,,,2812
+35,Enver Kuray Parkı,Cevizlidere Cd.1110-1111 sk ,Huzur,3440,684,275,,,,60,,,,,,9,4468
+36,Şehit Bülent Yollu Parkı,Cevizlidere Cd.1110-1111 sk Sk ,Huzur,3392,390,490,,,,,,,,,,,4272
+37,Aysun Karalar Burçin Uysal Parkı,Dikmen Cad-1068 Cd arası,Ata,1230,238,175,19,,,38,,,,,,,1700
+38,Reyhan Şar Parkı(2018),Dikmen Cad. ,Malazgirt,316,112,200,,,,,,,,,,,628
+39,Sultan Tenç Parkı,1057 cad,Ş.Cengiz Karaca,225,132,280,,,,,,,,,1270,,1907
+40,Şehit Tamer Kılıç Parkı,1047 cad.1046 sok. ,Ş.Cengiz Karaca,1260,380,172,,,,235,,,,,,,2047
+1,Neşe Alparslan Parkı,Hasan Celal Güzel Cad.-1507 Sk ,İşçi Blokları,525,215,260,,,,,,,,,,,1000
+2,İlhan Erdost Parkı,1516 Cad. ,İşçi Blokları,2676,1042,262,95,,413,,,67,,,,,4555
+3,İzci Parkı,1516 Cad.-1537 Sk. ,İşçi Blokları,4420,1496,560,44,,,,,,,340,,63,6923
+4,Bayram Yiğittop Parkı,1518 Sk ,İşçi Blokları,2020,318,200,,,,,200,,,,,,2738
+5,Ceren Damar Şenel Parkı,Öğretmenler Cad.1528 Sk. ,İşçi Blokları,1963,1090,335,26,,539,204,,,,,,88,4245
+6,Akasya Parkı ,1513-1515 Sk ,İşçi Blokları,1507,480,213,53,,,462,,,,,,,2715
+7,Şehit Piyade Astsubay Arif Çakır Parkı,Hasan Celal Güzel Cad.-1400 Sk ,İşçi Blokları,1185,462,35,,,,306,,,,,,,1988
+8,Rıfat Ilgaz Parkı,Muhsin Yazıcıoğlu Cad.  ,İşçi Blokları,1540,417,140,,,,,,,,,,,2097
+9,Yüksek İhtisas Üniversitesi ,1505 Cadde No:18/A,İşçi Blokları,658,125,,,,,,,,,,,,783
+10,Serçev Parkı,Muhsin Yazıcıoğlu Cad.-1437 Cad. ,Kızılırmak,1677,766,365,10,,,,,,,,,,2818
+11,Prof. Dr.Türkan Saylan Parkı,1428-1426 Cad. ,Çukurambar,4931,682,,200,,,,,,,,,,5813
+12,Teoman Öztürk Parkı,1438 Sk.-1466 Sk. ,Çukurambar,8000,314,314,198,,1020,516,,,,,,,10362
+13,Füsun Sayek Parkı,Hasan Celal Güzel Cad.-1505 Cad. ,100.yıl,4744,763,102,,467,,134,,450,,,,,6660
+14,Prof. Dr.Türkel Minibaş Parkı,Hasan Celal Güzel Cad.-1426 Cad. ,100.yıl,3992,1730,114,,,,,,,,90,,,5926
+15,Kaykay Parkı,1427.Cad,100.yıl,420,630,,,,,,,374,,,,,1424
+16,Çevre Parkı,1487 Sk. ,100.yıl,,168,,,,,220,,,,,2666,,3054
+17,Arman Talay Spor Tes.,1522 Sk.,100.yıl,2766,2792,325,200,835,,,,,,116,,4292,11326
+18,Şehit Pilot ÜstteğmenTahsin Barutçu Parkı,Öğretmenler Cad.-Ufuk Üniv. Cad. ,Çukurambar,1240,348,,102,,,,,,,,578,,2268
+19,Doğa Parkı,1550 Cad-1564 Sk.,Karakusunlar,3250,464,276,,,,120,,,,,,,4110
+20,Meral-Yaman Okay Parkı,1550Cad-1559 Sk.,Karakusunlar,6950,1010,300,,,,416,,,,,,,8676
+21,Can Yücel Parkı(2016),1551 Cad.,Çiğdem,4500,1416,114,,,447,,,78,,,2682,442,9679
+22,Gamze Akbaş Parkı,1594 Sk.,Çiğdem,,32,322,,,,355,,,,,179,,888
+23,Belediye Lojmanları,1505 Cad.-400 Sk. ,100.yıl,2165,280,,,,,,,,,,,,2445
+24,Berfo Ana Parkı,1071 Malazgirt Bulvarı ile 1539 Sk. ,Çiğdem,11200,2078,370,,,1020,420,,150,,64,,2530,17832
+25,Sevgi Parkı,1577 Sk-1581 Sk ,Çiğdem,1690,397,319,,,326,,,168,,,,,2900
+26,Trafik Eğitim Parkı,1550 Cad-1553 Cad. ,Çiğdem,1487,837,354,,,163,,,,,,61,,2902
+27,Nazar Boncuğu Parkı(2015),1593 Sk,Çiğdem,860,325,200,,,,,,70,,,,116,1571
+28,İlknur Yorulmaz Parkı(2016),1436 Sk.-1443 Cad. ,Çukurambar,900,177,197,,,,,,,,,,91,1365
+29,Ozancan Akkuş Parkı(2018), 1549. Cad. 1552 Sk. ,Çiğdem,430,185,36,,,,,,,,77,,302,1030
+30,Başak Parkı,1570 Cad-1550 Cad.,Karakusunlar,1970,262,700,,,,200,,,,,,,3132
+31,Ebru Parkı,1559 Sk. 1550 Cad. ,Çiğdem,1317,198,165,,,,,,,,,,,1680
+32,Dünya Parkı,1550 Cad-1572 Cad. ,Çiğdem,,208,290,,,,,,,,,3075,,3573
+33,Eczacılar Anıt Parkı (2021),1450 Sk - Mevlana Bulvarı ,Kızılırmak,4000,1295,526,19,,,385,,,,47,1890,,8162
+34,Hakkı Yumuş Parkı,Cevizlidere Cad.-1163 Cad. ,Gökkuşağı,5424,184,26,,,212,325,,,,,,,6171
+35,Hamza Aksoy Parkı,1163.Cad-1173Sk-1174Sk.,Gökkuşağı,1916,141,,,,304,,27,,,,,,2388
+36,Ayten Baykal Parkı,1163 Cad. 1168 Sk.,Karapınar,2236,285,113,,,308,,25,,,,1145,,4112
+37,Neşet Ertaş Parkı,Cevizlidere Cad.ile Ceyhun Atuf Kansu Cad.,Cevizlidere,3160,521,469,14,,201,,,126,,,558,72,5121
+38,Vedat Türkali Parkı,1127 Sk.,Huzur,,1071,327,,,,,,290,,,2588,,4276
+39,Misket Parkı(2014),1199 Sk. ile 1200 Sk. ,Gökkuşağı,1610,752,331,,,907,,,128,,,,235,3963
+40,Kolombiya Parkı(2023),1206 - 1207 sokak kesişimi,Gökkuşağı,508,400,281,,,,,,42,,,,,1231
+41,Ukrayna Parkı(2022),Ufuk Üniversitesi Caddesi No:12 Yanı,Kızılırmak,5290,1310,,,,,,,864,,,610,156,8230
+42,Eti Maden Parkı(2022),1423.Cd. Eti Maden İşletmeleri Genel Müd.Önü,Kızılırmak,722,485,,,,723,,,,,,,,1930
+43,Mutluluk Çocuk Parkı,Öğretmenler Caddesi - 1480 sokak kesişimi,Çukurambar,1830,730,500,,,,,,,,,,58,3118
+1,Pablo Neruda Parkı,Uçarlı sok ile Selimeye cd. ,Ayrancı,1180,260,390,25,,,,,,,32,,5,1892
+2,Cemal Süreya Parkı,Dikmen Cad. Uçarlı Sk. ,Ayrancı,5000,1588,750,,,468,481,340,80,,248,,65,9020
+3,Gülizar Yurtseven Parkı,Tirebolu Sk. İle gökdere sk. ,Ayrancı,1360,264,196,,,,147,,,,,,9,1976
+4,Ahmet Tunç Parkı,Hoşdere Cad.Mesnevi Sk.(Alt Geçit),Aziye,2992,718,,,,,665,,,,,,15,4390
+5,Jose Marti Parkı,Hoşdere Cad. ,Aziye,2149,398,310,31,,,,68,,,,,25,2981
+6,Hayri Çeçen Parkı,Hoşdere cad . S.Nafiz sok.,Güzeltepe,865,400,,,,,,,,,,,,1265
+7,Necip Hablemitoğlu Parkı,Portakal Çiçeği Sk.Şair nedim sk.,Aziye,1540,623,233,46,,,,,,,6,,15,2463
+8,Bahadır Uzunlu Parkı,Hoşdere Cd. Yaylagül sk. ,Ayrancı,1080,228,,16,,,,,,,,,72,1396
+9,Adile Naşit Parkı,Kuzgun Sk.Nazilli Sk. ,Güvenevler,640,434,154,,,,,,76,,,,4,1308
+10,Eren Onur Demircan Parkı,Şimşek sok. ,R.Oguz Arık,250,281,80,,,,,,,,38,,4,653
+11,Şimşek Sokak,Şimşek sok.Y.Ayrancı,R.Oguz Arık,2324,136,,,,1005,,,129,,,,,3594
+12,Şili Meydanı,Paris cd. Kavaklıdere cad. ,R.Oguz Arık,360,150,,2,,,,,,,,,12,524
+13,Afet İnan Parkı,Paris cd.Kuveyt cd.,Güvenevler,534,142,90,3,,,,,,,,,,769
+14,Basın Şehitleri Parkı,Şehit Ersan cad. ,Çankaya,9930,2630,185,150,,,,,,,132,2700,14,15741
+15,Çankaya Çay Bahçesi ,Şehit Ersan cad. ,Çankaya,2902,351,,19,,,,,,,,,,3272
+16,Alexander Dubcek Parkı,Bükreş sok.ile Kilis sok.,Çankaya,438,245,231,,,,,,,,48,427,6,1395
+17,Yeşil Vadi Parkı,Kırlangıç caddesi,Gop,1960,402,355,,,,,30,,,,,,2747
+18,İlkadım Parkı,İlkadım sokak izci sk. ,Kazım Özalp,1247,248,170,,,,,,,,,,9,1674
+19,Beyhan Cenkçi Parkı,Üsküp cad. ile And sk. ,Çankaya,180,370,,,,,,,,,,,,550
+20,Fikret Otyam Parkı,"Güvenlik cad. köşes,",Kavaklıdere,609,,,,,163,,,,,,,,772
+21,Pinokyo Parkı,Sedat simavi sk.ile 736sk ,Yıldızevler,1203,335,250,,,,,,,,11,,12,1811
+22,Sedat Simavi Parkı,Sedat Simavi Sokak ile 740 sk ,Yıldızevler,329,110,120,,,,,,,,,,,559
+23,Anayasa Parkı,Simon Bolivar Cad.  İle Sedat Simavi sk ,Yıldızevler,2284,604,,45,,332,,,,,88,,64,3417
+24,Ressam Duran Karaca Parkı,Artım Sk                  ,Yıldızevler,1400,130,,,,,,,,,,,,1530
+25,1000 Çocuk Korosu Parkı,Alkım sokak  ,Yıldızevler,1310,90,260,,,,,,,,,,,1660
+26,Ömer Seyfettin Parkı,Alkım sk.ile Duyu sk.,Yıldızevler,990,312,355,,,,,,,,10,,,1667
+27,Görkem Parkı,Joze Marti cad. - 721 sok. - 722sok ,Yıldızevler,2645,778,385,,,,,,,,,,8,3816
+28,Yıldız Yaya Parkı ,708-709-710 so ,Yıldızevler,3545,9125,350,20,,,,,,,570,,4156,17766
+29,Kerim Afşar Parkı,Holzmeister cad.677 sok ,Hilal,1595,539,237,11,,,,,,,,,26,2408
+30,Vü'sat Orhan Bener Parkı,Tayland cad.688-689 sok ,Hilal,975,163,130,,,,,,,,,,,1268
+31,Meksika Parkı,Kişinev cad.-725 sk ,Hilal,2893,905,154,,,495,174,,,,,,,4621
+32,Ufuk Güldemir Parkı,Tayland cad. ile 691 sk. ,Hilal,925,939,305,25,,,126,,,,,,,2320
+33,Hilal Park,Rabin Dranathtagore cad 694 sok ,Hilal,940,438,,190,,,,,,,,,,1568
+34,Duygu Parkı (2018),695. cad ve Tayland cad. ,Hilal,1690,393,132,,,,,,,,,,375,2590
+35,Ahmet Çavuş Parkı (2018),694. cad ve Tayland cad. ,Hilal     ,2330,934,,,,,,,,,,,,3264
+36,Adalet Parkı (2019),677.sok ile 687 sok ,Hilal,16000,1790,366,,,991,,,,,,,245,19392
+37,Ata Meydanı,Hoşdere Caddesi-Simon Bolivar kesişimi,Çankaya,,,,,,,,,,,,,,
+1,Süvari Parkı ,Katar cad - 285 sok  - 406 sk ,Birlik,1130,480,,20,,,,,,,,,20,1650
+2,Demokrasi ve Çocuk Hakları Parkı,414-414/1 sok ,Birlik,3830,1244,461,,,,444,,,,117,,271,6367
+3,Hüseyin Akbaş Ç.O.A.,Ali Haydar Feroğlu sok - 507 sk ,Sancak,800,290,615,10,,,,,,,,,28,1743
+4,İsmet Camuzoğlu Parkı,512-551 sok ,Sancak,1290,310,390,,,,,,,,,,20,2010
+5,Tiflis Parkı(2017),Doğukent cad-Kahire cad ,Sancak,2950,1005,290,60,,,,,,,,236,6,4547
+6,Teoman Erel Parkı,Layoş Koşut cad-Cidde cad ,Sancak,2765,420,365,10,,,365,,,,,,10,3935
+7,Cengizhan Parkı,Turan Güneş Bulvarı - 519 sk - 521 sk ,Sancak,7474,2610,454,109,,,,65,,,,,38,10750
+8,Üç Fidanlık Parkı,Turan Güneş Bulvarı Ukrayna cad ,Sancak,1300,160,,18,,,,,,,,,22,1500
+9,Francisco de Miranda Parkı,Podgoritsa cad.- 448 cad ,Birlik,3369,965,505,26,,,230,,,,,,20,5115
+10,Soma Şehitleri Parkı,482-483 sok. kesişimi ,Birlik,715,95,300,,,,,,,,,,,1110
+11,Rüya Parkı,438 sok. ,Birlik,3245,565,525,,,,,,,,,,40,4375
+12,Ekvator Cumhuriyeti Parkı,448 cad-469 sok ,Birlik,1695,540,120,10,,,,,,,,,60,2425
+13,Şirin Park ,450.cad.389.sok-382 sokarası,K.Konaklar,920,532,225,,,,76,,,,,,,1753
+14,Mustafa Sarı Parkı,350-351-352-353sok,K.Konaklar,650,142,158,,,,,,,,,,,950
+15,Gülten Çapar Parkı,Tiflis cad. 512 sk.,Sancak,267,50,,,,,,,,,,,,317
+16,Çiçek Parkı,Todam arkası Şemsettin Günaltay Cd 290.sk. ,K.Konaklar,462,118,70,,,,,,,,,,,650
+17,Simon Bolivar Parkı,Ukrayna cd.Konrad Adenauer 523-524. sk,Sancak,3685,1085,95,,,,,,,,,,,4865
+18,Madenci Parkı,302 sok. - 290. sok. ,K.Konaklar,1360,276,190,,,258,,,102,,,940,,3126
+19,Şht.Piyade Astsubay Kıdemli Çavuş Doğukan Tazegül Parkı,329-314 cad ,K.Konaklar,4580,989,160,,,,,,,,,,10,5739
+20,Kırkkonaklar Simkent Parkı,315 cd - 316 cd ,K.Konaklar,3714,180,,10,,1012,,,,,,,4,4920
+21,Tevfik Fikret Parkı   ,340-341-342-343 sok ,K.Konaklar,482,255,375,,,,,,,,,,,1112
+22,Özdemir Asaf  Parkı ,Şemsettin Günaltay Cad 467.sok. ,Birlik,1830,640,165,,,,310,,200,,,2000,,5145
+23,Dilruba Tekin-Ahmet Tuna Tekin -Türkan Ay Parkı,393 cad-466 sok ,Birlik,433,910,166,,,,,,,,,1550,,3059
+24,Şair İlhan Berk Parkı,393-465 sok ,Birlik,1690,1500,,,,,,,256,,,1101,,4547
+25,Aydınlar Ormanı  ,467.-465sok.,Birlik,,402,40,,,,120,,,,,3911,,4473
+26,Mehmet Ayvalıtaş Parkı,319 sok üzeri (Petek Sitesi yanı),K.Konaklar,2101,282,305,,,,,,,,,,,2688
+27,9 Eylül Parkı,435.cad.- 398 sk.  - 400 sk. ,Birlik,1995,631,250,,300,,,,364,,,,,3540
+28,Hikmet Şimşek Parkı,408 sk - 406 sk ,Birlik,1285,180,110,,,,,,,,,,6,1581
+29,Efe-Ece Dalmanoğlu Parkı,285 sok. - 406 sok. ,Birlik,25,92,70,,,,,,,,,1037,,1224
+30,Şehit Salih Taç Parkı,435 cd - 455sk.- 456 sk. - 457 sk ,Birlik,750,,,,,,,,,,,,,750
+31,Münir Özkul Parkı (2018)                      ,392sok. 319 sok.- 316. sok.,K.Konaklar,4807,3123,,,,,,,,,,,,7930
+32,Nenehatun Parkı (2018),290. sok.,K.Konaklar,1750,346,240,,,,,,100,,,,,2436
+33,Tayfun Talipoğlu Parkı(2017),Tiflis cad. - 516 sk. ,Sancak,2130,521,,,,365,852,,190,,,,267,4325
+1,Milli Piyango Parkı,Dikmen Cad. ,Harbiye,426,162,250,,,,,,,,,,,838
+2,Ergun Ataca Parkı,Hürriyet Cad.,Harbiye,319,198,170,,,,,,,,20,,,707
+3,Aşık Veysel 1,Hürriyet Cad. ,Harbiye,1044,455,205,,,,80,,,,,465,205,2454
+4,Aşık Veysel 2,Nisan Sk. ,Harbiye,1165,367,130,,,,,67,,,,,16,1745
+5,İ.Hakkı Tonguç Parkı,Sinan Sk-756 sk kes.,N.Çakır,700,420,570,,,,,,,,,,6,1696
+6,Aşık Mahsuni Şerif Parkı,İlker 752.Cad.772.Sk. ,Metin Akkuş,1700,577,104,,,,150,,115,,,,55,2701
+7,Beyler Çıldır Parkı,1036 cd.-966 sk,Osman Temiz,2045,555,562,,,,,,,,,,18,3180
+8,Ressamlar Parkı,752 Sk.-980 sk,M.Uluç,2170,350,420,,,,,150,,,,,6,3096
+9,Murat Şahiner Parkı,931.Cad. 945 Sk. ,M.Uluç,1963,400,165,,,,,,,,105,,,2633
+10,Dört Mevsim Parkı,İlker 752.Cad.1029.Sk.,Osman Temiz,1550,350,700,,,,,75,,,,100,2,2777
+11,Kazım Özcan Parkı,Sokullu Mehmet Cad. İğde Sk.,Ş.Cevdet,925,277,,,,,,,,,12,,15,1229
+12,Naci Çakır Mah.Muht.Yanı,İlker 752.Cad.    ,Osman Temiz,1170,297,,,,,,,,,,,322,1789
+13,Barış Parkı,Hürriyet Cad. ,Aydınlar,1220,737,232,8,,,39,,,,,,26,2262
+14,İlkbahar Parkı,İlk Bahar sokak,Sokullu,4365,2709,522,,,,,,,,124,190,40,7950
+15,Milli Futbol Takımı Parkı,Bağ Sk T. Fikret Cd. ,Sokullu,4580,,,,,820,,,,,,,10,5410
+16,Ali Göktaş Parkı,S.Mehmet Cad-Mimar sk.,İlk Adım,2239,1510,,,,,,,,,,,,3749
+17,İsmet İnönü Parkı,752 Cad. 974-977  Sk.,M.Uluç,9088,1832,440,75,,,,,,,86,,70,11591
+18,Haydar Aliyev Parkı ,752 Cad.974 Sk.(Kadın Semt Lokali Yanı),M.Uluç,2680,150,105,,,,,,,,,,160,3095
+19,Ali İzzet Özkan Parkı, 752 Cad.791/3 sok. ,İlker,885,139,80,,,,16,,,,,,,1120
+20,Nazlı-Yılmaz Şahin Parkı,931 Cad.,M.Uluç,692,726,230,80,,,740,50,,,,2252,180,4950
+21,Şht.Pilot Üsteğmen Onur Özkaya Parkı,752 cad-989 sk sok.,M. Uluç,1005,158,139,,,,,,,,,,,1302
+22,Ziya Yılmaz Parkı,752. cad üzeri,İlker,465,175,113,6,,,,,,,,547,,1306
+23,Metin Altıok Parkı,Bağ Sk T.Fikret Cd.(Milli Futbol Takımı devamı) ,Sokullu,3383,787,264,,,,96,474,73,,,,,5077
+24,Erkan Kuş Parkı,Virajlı Caddesi - 1361 Cad. ,Sokullu,776,84,147,,,,,,40,,,,,1047
+25,Ayhan Sümer Parkı,1002-1003 sk ,Malazgirt,1310,285,80,,,,,,,,,,,1675
+26,Cahit Sıtkı Tarancı Parkı(2016),Sokullu Mehmet Paşa cd. ,Sokullu,3728,2426,213,,,,,,38,,,,,6405
+27,Selda Bağcan Parkı (2018),752.Cd.Sonu 950.Sk.Turkop Sitesi Yanı,M.Uluç,1528,852,250,,,,364,37,450,,,,1709,5190
+28,Orhan Birgit Parkı(2020),993 sokak ,Osman Temiz ,2150,1070,117,,,,201,,61,,,1185,305,5089
+29,Karapınar Spor Parkı (2021),1186 Sok. - 1188 sok. ,Karapınar,2705,1666,356,,,,436,70,800,,,,,6033
+30,Çayda Çıra Parkı(2016),962 Sk. ,M.Uluç,2000,1170,252,,,373,,,81,,,5000,2124,11000
+31,Kıvırcık Ali Parkı,1026 Cad.-1034 Sokak,Osman Temiz,1750,321,306,22,209,,,,62,,,921,,3591
+32,Dilek Gürer Parkı,752 cad.-984 sokak ,M.Uluç,1100,456,340,110,,348,,,100,,,,,2454
+33,Mustafa Ekmekçi Parkı ,DikmenCad. ,K.Pınarı,900,315,275,,,,,,,,,,30,1520
+34,Talip Apaydın Parkı,Ahmet Yesevi Caddesi,Akpınar,1200,257,,,,,,,,,,,,1457
+35,Akpınar  Ç.O.A,859 sok.858 cad.,Akpınar,85,150,45,,,,,,,,,,,280
+36,Tuncel Kurtiz Parkı (2018),844 Cadde,Akpınar,5420,859,,,,,,188,,,,,2,6469
+37,Sabahattin Ali Parkı,Dikmen Cad. ,Karapınar,3465,553,186,,279,,364,,47,,,,,4894
+1,İsmail Cem1,628 sok -  630 sok. ,Oran,1848,247,,15,,,,,,,,,,2110
+2,İsmail Cem 2,630 sok - Tevfik Kış cad. ,Oran,1691,867,672,,,,365,,,,,,,3595
+3,75. Yıl Parkı,636 cd.- Ürdün cd. ,Y.Dikmen,5850,473,545,12,,,,,,,,,25,6905
+4,Fikret Kızılok Parkı,628 sok ,Oran,2500,282,,,,,,,,,,,,2782
+5,Çalıkuşu Parkı,646 sk -647 sk -648 cad ,Y.Dikmen,1335,266,600,,,,,,,,,,12,2213
+6,Sedat Oğuz Çetin Parkı,638 cad. Sk,Y.Dikmen,2665,585,,,,,,,,,,,,3250
+7,Prof.Dr.Semra Dündar Parkı,636-637 cad (Hacettepe Fizik Tedavi yanı),Y.Dikmen,2275,167,,28,,566,,,,,,,,3036
+8,Kağan Gürşen Parkı,Arif Nihat Asya cad - 807. sk ,Oran,1125,375,,,,,,,,,,,,1500
+9,Şehit Jandarma Uzm. Çvş.Erdem Ünal Parkı,Ö.Mümtaz Tanbi sokağı - Hacı Mustafa Beynam sok ,Oran,1089,381,227,,,,128,,,,,,40,1865
+10,Nuri Pakdil Parkı,Zülfü Tigrel Cad.No:30 -32yanı,Oran,325,43,45,,,,,,,,,,,413
+11,İsmail Cem Todam,Turan Güneş Bulvarı  - Or-an 630 sok  ,Oran,,287,,,,,,,,,,1188,,1475
+12,Clemens Holzmeister Parkı,635 sok  Teras  Evler Yanı,Y.Dikmen,2160,1047,180,,293,,,,320,,,,2,4002
+13,Nezir Büyükcengiz Parkı,648 cd. - Buhara Sokağı ,Y.Dikmen,2392,1083,365,,,,,,323,,,134,,4297
+14,İpek Parkı,Turan Güneş Bulvarı  - Kudüs cd. ,Oran,294,118,168,,,,,,,,,,,580
+15,Yücel Baba Bilim Parkı,Esat özdoğuş sk. H. Yalman sk. ,Oran,530,,,,,,,,,,,,,530
+16,Özgecan Aslan Parkı(2016),Ali Fuat Cebesoy Sk.Arif Nihat Asya Sk.ve 807.Sk. ,Oran,2100,300,152,,327,,392,130,,,,,285,3686
+17,Bülent Ecevit Parkı(2016),Esat özdoğuş sk. - H.Yalman sk ,Oran,4634,787,353,,,,,,,,,,632,6406
+18,Oran Barış Parkı (2016),Zülfü Tigrel Cad. Ferit Recai Ertuğrul Cad. ,Oran,1143,253,,,,,,,,,15,,,1411
+19,İsmail Kavak Parkı (2022),Medine Müdafii Cad. ile 618 sok.Kesişimi ,Oran,770,430,,,,,,,,,,,,1200
+20,Tuna Cantürk Parkı,645 sokak,Yukarı Dikmen,2575,,470,,,682,,,,,,,,3727
+21,Şehit Savcı Mehmet Selim Kiraz Parkı,Zülfü Tigrel Cad. Elif Naci Sk.,Oran,650,,,,,,,,,,,,,650
+22,Slovenya Parkı,574 sok,Dumlupınar ,1690,1054,205,10,256,,,,336,,,,2,3553
+23,MNG sitesi yanı,576 sok - Ş.Necdet Koca sok ,Dumlupınar ,3010,,,,,,,,,,,,,3010
+24,Jülide Gülizar Parkı,Meto İ.Ö.O yanı 572 sk.Ş.Necdet Koca sk. ,Dumlupınar ,1000,230,452,,,,299,,74,,,,,2055
+25,Şht.Jand.Onb.Metin Özdemir Parkı,576 sk - 577 sk - 578 sk ,A.Dikmen,1818,515,105,,,,,,,,,,45,2483
+26,Demokrasi ve Şehitler Parkı (2017),Turan Güneş Bul.596 Sk.Doğukent bulvarı ,İlkbahar,4175,560,105,,,,,,,,,,2,4842
+27,Oğuz Atay Parkı,620.Sok.Galip Erdem cad ,İlkbahar,4215,670,69,,,,,,,,,,,4954
+28,Şehit Fatih Şahin Parkı,616 sk - 617 sk arası,İlkbahar,1295,335,395,,,,,,,,,,,2025
+29,Attila İlhan Parkı,Galip Erdem cad - 618 sk.,İlkbahar,2095,1100,50,,,,,,,,,,2,3247
+30,Nazım Hikmet Ran Parkı,Dikmen Cad. ,K.Pınarı,1466,1250,143,,,,,,,,790,5892,970,10511
+31,Atapark,Mevlana Bulvarı,Akpınar,8271,2129,,5,,,,,,,621,,40,11066
+32,Prof Dr.Hikmet Birant- Alıç Parkı,Ahmet Yesevi sok.,Akpınar,1352,530,188,,,,,,273,,,1479,2,3824
+33,Cemal Özdiker Parkı,Ahmet Yesevi sok.,Akpınar,1000,565,,,,,,,172,,,1543,,3280
+34,Genco Erkal Parkı(2021),Dikmen Cad-836 Cd. ,Akpınar,3972,650,341,,,,,,,,,,,4963
+35,Malazgirt Parkı,1012-1021 Sk. ,Malazgirt,1293,332,180,,,120,,,45,,,,,1970
+36,Prof.Dr.Muammer Aksoy Parkı(2016),929 cad. 1017 sok. ,Malazgirt,1610,1654,245,,,,,,,,146,570,,4225
+37,Şükran Güngör Parkı,Park Pınar Evleri arkası 900 Sk.,K.Pınarı,1058,310,160,,,,,,,,,,16,1544
+38,Yıldız Kenter Parkı,901cad.-908 sok ,K.Pınarı,982,310,395,,,,,,,,,,,1687
+39,Müşfik Kenter Parkı,907-908 sok.,K.Pınarı,290,34,,,,294,,,,,,1962,,2580
+40,İnebolu Parkı,927 Cadde ,Keklikpınar,3500,1098,171,35,,,160,,88,,,,250,5302
+41,2 Temmuz Parkı,901 cad-929 cad ,Malazgirt,8354,2661,175,,,,,,,,,,,11190
+42,Özümit Sitesi,Dikmen Caddesi 890 sokak,Keklikpınar,112,,280,,,,,,56,,,144,,592
+1,Beytepe Parkı (2018),1790.Sk. -1803 Sk. ,Beytepe,1284,271,,,,343,421,,,,,,,2319
+2,Mercan Parkı(2018),5355 Sk.-5353 Sk. ,Beytepe,1764,880,,,,,,,,,,,,2644
+3,Türkan Saylan Çankaya Evi,Kanuni Sultan Süleyman Bulvarı- Selçuklu Cad. ,Beytepe,2927,3107,,,,,,,,,,,,6034
+4,Özkan Uğur Parkı,1790 cadde 1798 sokak kesişimi,Beytepe,2800,681,220,12,,451,196,,,,,2512,,6872
+5,Filenin Sultanları Parkı,5540 sokak - 5542 sokak kesişimi,Beytepe,961,810,,,,,510,784,120,,,,,3185
+6,Bilkent Çamlık Parkı (2017),1597 Cad. Şeh. M.Tayyar Can Cad. ,Bilkent,3497,691,210,,,194,300,,,,,,,4892
+7,Bilkent Ufuk Sitesi,11 Cad. -1617 Sk. ,Bilkent,,,,,,,,,,,,8500,,8500
+8,Abdullah Cömert Parkı,2130 -2131 Sk. ,M.Kemal,905,430,226,,,,,,,,,,,1561
+9,Cansu Kaya Parkı,2099 Sk.-81 Sk. ,M.Kemal,3548,855,200,,,265,410,,,,70,,218,5566
+10,Ethem Sarısülük Parkı,2133 Sk.-2129 Sk. ,M.Kemal ,1583,536,411,,,399,,,66,,,,,2995
+11,Ezcacılar Birliği Parkı,2139 Sk.,M.Kemal ,786,,,,,303,,,,,,,168,1257
+12,Gazeteci Emin Çölaşan Parkı(2017),2104 Sk.-2110 Sk. ,M.Kemal,4809,806,,,,,,,,,104,,1572,7291
+13,Gelincik Parkı,2116 Sk.,M.Kemal,1891,,,,,,,,,,,,,1891
+14,Menekşe Parkı,2116 Sk.,M.Kemal,771,,102,,,,,,,,,,,873
+15,Nergis Parkı,2104 Sk.-2160 Sk. ,M.Kemal,1999,,,,,494,165,,,,,115,,2773
+16,Sema Yazar Parkı,2131 Sk.,M.Kemal,2850,344,345,,531,,,,200,,,,,4270
+17,Sümbül Parkı,2099 Sk.,M.Kemal,1071,,,,,,,,,,,,,1071
+18,Şht.Atğm.Ahmet  Erkan Doğan Parkı,2139-2147 Sk.,M.Kemal,700,180,535,,,,,,,,,,11,1426
+19,Tevfik Fikret Lisesi önü ,2120 Cad.,M.Kemal,1077,354,,,,,,,,,,,,1431
+20,Brezilya Parkı(2023),2146 sokak ile 2145 sokak kesişimi,M.Kemal,1301,391,260,,,142,,,98,,,,153,2345
+21,Angora Sevimli Park (2021),Angora Evleri Rüyalar Caddesi-Çınar Sokak ,Mutlukent,841,157,170,,,,,,,,,,,1168
+22,Beta Parkı,1941. Sok. No.:12,Mutlukent,455,118,150,,,,,,,,,,,723
+23,Beysupark,S.Saltoğlu Bulvarı,Çayyolu,4685,1197,104,,,,,,104,,,,148,6238
+24,Beysukent Cumhuriyet Parkı,2038. Sok. No:17,Mutlukent,15160,,280,135,2196,,1190,,,,355,,390,19706
+25,Beytepe Yürüyüş Yolu,Angora Cad. ,Mutlukent,179,557,,,464,,,,,,,,,1200
+26,Deniz Parkı (2019),Angora Evleri Yelkenli Caddesi    ,Mutlukent,2329,559,,,,,,,,,,,401,3289
+27,Duygu Parkı,1943. Cad.,Mutlukent,,20,,,,,,,,,,500,,520
+28,Elele Parkı,Doğan Taşdelen Bulvarı  No:57,Mutlukent,432,310,95,,,,,,,,,,,837
+29,Harput Parkı (2017),1961. Cad. No:66,Mutlukent,2770,250,100,,,,,,,,,,,3120
+30,İdil Güneyi Parkı,1954. Sok,Mutlukent,3443,613,330,,,,,,,,,,135,4521
+31,Kamer Genç Parkı (2018),1920. Cad. No:18,Mutlukent,3200,1910,,,,639,640,,,,,,,6389
+32,Makiş- 2 Parkı,1931. Sok Başak Sitesi içi,Mutlukent,1242,332,49,,,,,46,,,,,,1669
+33,Makiş Basket Parkı,1931. Sok. Makiş sitesi içi,Mutlukent,,480,,,,,,,,,,120,,600
+34,Makiş Emek Parkı,1931. Sok. No:9,Mutlukent,4976,625,120,,,446,,,,,,,132,6299
+35,Murat Sokak isimsiz park,Murat Sok.Beysukent,Mutlukent,927,247,76,,,,,,,,,,,1250
+36,Mutlu Park (2019),1971 Sokak,Mutlukent,1037,,,,,,,,,,,,543,1580
+37,Okyanus Parkı  (2019)      ,Angora Evleri Yelkenli Caddesi  ,Mutlukent,3379,668,385,,,595,250,,135,,,,,5412
+38,Ruhi Su Parkı,Angora Bulvarı-2047 sokak ,Mutlukent,4025,630,,,,,,,,,,,9,4664
+39,Şair Oğuz Tansel Parkı,2010 Sok.,Mutlukent,7200,,,,890,,,,,,,,,8090
+40,Şht.Hava Plt.Kur.Yzb. Mustafa Tanış Parkı(2015),Angora Cad. 2007 Sok.,Mutlukent,10680,4002,651,,,603,1732,,225,476,67,,165,18601
+41,Yazıkırı Parkı,1967. Sok.,Mutlukent,1666,325,264,,,,405,,100,,,,,2760
+42,Gazeteci Yazar Cüneyt Arcayürek Park(Çaprazı),2176 Sk,Söğütözü,2485,375,,,,,,,,,,,,2860
+43,Gazeteci Yazar Cüneyt Arcayürek Parkı(2020),2176 Sk,Söğütözü,3945,669,,,,,,,,,,,,4614
+44,Güzin Abla Parkı,2171 Sk.,Söğütözü,2220,380,180,,,,400,,,,,,,3180
+45,Kardelen Parkı,Söğütözü Cad.,Söğütözü,1679,445,340,,,,,,,,,,12,2476
+46,9 Eylül Kuruluş Parkı(2014),Anadolu Blv. İle Nizami Gencevi Cad. ,Söğütözü,8300,1436,,,,672,,,120,,,,1293,11821
+47,CHP Genel Merkez,Anadolu Bulvarı 2179 Sk.,Söğütözü,,,,,,,,,,,,,1150,1150
+1,Altın Çocuk Parkı ,2517 Tek Sitesi No:92,Ümit ,1650,187,69,,,,,,,,,,,1906
+2,Cem Karaca Parkı,2483. Cad. No:2,Ümit ,2478,598,86,,,,,196,115,,,,,3473
+3,Dostluk Parkı,2538.Sok. 2510. Cad.,Ümit ,1051,436,113,,,,,,,,,,,1600
+4,Durusu Parkı,Ankaralılar Cad. 2480.Sok.,Ümit ,1620,265,136,,,,,,136,,,415,,2572
+5,Güneş Bahçesi  Parkı (2017),2521 Sok. 2552 Sok. arası,Ümit,14676,2100,224,,,,,,156,,185,,417,17758
+6,Koçlar Parkı,2497 Sok.,Ümit ,4024,1672,150,13,,816,392,,25,,,,68,7160
+7,Kutlutaş Kardeşlik Parkı,Meksika Cad.,Ümit ,10090,2528,495,,,889,,,254,,69,,139,14464
+8,Kutuğun Parkı,Doğan Taşdelen Bulvarı  Necatibey Sok.,Ümit ,589,182,105,,,,,,,,,,,876
+9,Mahonya Parkı,Doğan Taşdelen Bulvarı 2435 Sok.,Ümit ,2061,278,,98,,,,,,,63,,,2500
+10,Nazım Hikmet Ran Parkı,2472. Cad. 2447. Sok.,Ümit ,16536,1150,237,24,,313,420,,52,,29,,2,18763
+11,Özgün Park,2513.Sok. No:1,Ümit ,1990,553,220,,,,,,,,,,87,2850
+12,Prof.Dr.Mehmet Ali Gürer Parkı,"Doğan Taşdelen Bulvarı, 2681. Sok.",Ümit ,8796,1453,150,32,,969,420,,80,,,,,11900
+13,Sarı Zeybek Parkı,2486 Sok. 2483 Cad.,Ümit ,6431,1948,158,,,1260,1277,,71,,,,37,11182
+14,Sedir Parkı,2520 Sok.,Ümit ,2130,377,204,3,,,,,,,,,,2714
+15,Sevgi Parkı,2482. Sok. No:79,Ümit ,1297,70,95,,,,,,38,,,,,1500
+16,Şht.Jandarma Onbaşı Çoşkun Kılıç Parkı,2518 Sok.,Ümit ,11321,12652,310,,,,,,,,58,,38584,62925
+17,Şirinler Parkı,Doğan Taşdelen Bulvarı 2435 Sok.,Ümit ,1101,219,236,,,,,,,,,,,1556
+18,Tevfik İleri Parkı,2432. Cad.,Ümit ,1966,1720,,2,,,,,,,128,,,3816
+19,Ümit Yuvam Parkı,Meksika  Cad. No:25,Ümit ,4115,2148,314,2,,,680,,240,,,,,7499
+20,Ümitköy Dinlenme Parkı,2442 sokak,Ümit ,1132,278,125,,,,,,,,,,,1535
+21,Yaprak Parkı,2510.Cad.  2506. Sok.,Ümit ,1163,252,,,,,,,,,,,,1415
+22,Yumak Parkı,2506 - 2509 Sok.,Ümit ,889,250,77,,,,,,,,,,,1216
+23,Bahattin Dinçmen  Parkı,"Doğan Taşdelen Bulvarı, 2652. Sok. No:27",Koru,27532,628,336,152,,1560,,,234,,,,58,30500
+24,Çayyolu Sultan Fatih Parkı ve Spor Merkezi,Doğan Taşdelen Bulvarı  Ankaralılar Cad. 2584 Sok.,Koru,9481,1373,240,,,,,5035,100,,,,1491,17720
+25,Emin Sarıkaya Parkı,Kavaklı Sok. ,Koru,4900,900,,,,400,500,,,,,,,6700
+26,Futbolcu Selim Gedik  Parkı,B.B.Ş.Mucibur Rahman Blv.  Ihlamur Cad.,Koru,2708,1740,218,,,,509,1409,81,,52,,189,6906
+27,İlhan Cavcav Parkı (2017),"Ankaralılar Caddesi, 2595 Sok.
+",Koru,4500,1945,320,,,752,,,230,,426,,4519,12692
+28,Kara Söğüt  Parkı,Ankaralılar Cad. 2574 Sok.,Koru,4175,507,,,,,,,134,,,,85,4901
+29,Koru Sitesi ,Kavaklı sk.,Koru,1206,208,192,,,,612,,46,,,,9,2273
+30,Koru Sitesi ,Köknar sk. Sarmaşık sk.,Koru,1998,500,120,,,,,,,,,,7,2625
+31,Koru Sitesi ,Sedir sk.,Koru,659,22,79,,,,,,,,,,,760
+32,Koru Sitesi ,Sedir sk. Kuzucuk sk.,Koru,1814,145,,,,,,,,,,,86,2045
+33,Koru Sitesi ,Ihlamur sk.,Koru,1760,,,,,,,,,,,,,1760
+34,Prof. Dr. Ahmet Taner Kışlalı  Parkı,Ankaralılar Cad. 2580 Sok.,Koru,9968,1000,,10,,,,,,,,,22,11000
+35,Prof.Dr.Kemal Kurdaş  Parkı,2558 Cad. 2567 Sok.,Koru,12494,1268,270,30,,,448,552,,,,,56,15118
+36,İshak Öztürk Parkı (2017),2432. Cadde ile 2673. Cadde ,Çayyolu ,1583,869,,,,,,,,,,,,2452
+37,Kurtuluş Savaşı  Parkı (2017),Doğan Taşdelen Bulvarı ile 2673 Cad. ,Çayyolu,2650,1494,300,10,,,,,,,,,,4454
+38,Dr.Şemseddin Bayram Parkı,1930 Sok-1929 Sok.,Mutlukent,,135,96,10,,,,,,,,942,,1183
+39,Nejat Uygur Parkı,1920 Cad-1924 Sok.,Mutlukent,1470,164,,,,,,,,,25,,,1659
+40,Gezinin Çocukları Parkı(2014),1920 Cad-1923 Sok.,Mutlukent,1734,753,105,,,,,,,,,,197,2789
+41,Muhtar Ayfer Yargıç Parkı(2021),1918 Sok.-1919 Sok ,Mutlukent,5000,1335,226,,,580,205,,122,,,,,7468
+42,Cumhuriyet Parkı,Doğan Taşdelen Blv.2892 Sok.,A.Taner Kışlalı,4836,1888,,,,,,,,,338,,,7062
+1,27 Aralık Kızılca Gün Parkı (2022),2880 Cadde - 2885 Sokak kesişimi,A.Taner Kışlalı,5718,766,156,,,233,,,100,,,,43,7016
+2,Ata Park,Banga Bandhu Blv. No:94,A.Taner Kışlalı,6052,1573,,,,,,,,,,,177,7802
+3,Ceyhun Atuf Kansu  Spor Kompleksi,A.Taner Kışlalı Cad. 2926.Cad.  2933 Sok.,A.Taner Kışlalı,10000,1370,,,,1300,1228,,226,,,,266,14390
+4,Ceyhun Atuf Kansu Parkı,A.Taner Kışlalı Cad. 2933. Sok.,A.Taner Kışlalı,3925,300,430,,,,,,,,,,400,5055
+5,Çayyolu Dinlenme Parkı ,Banga Bandhu Blv. 2916-2917 Sok ,A.Taner Kışlalı,1482,133,,,,,,,,,,,72,1687
+6,Doktorlar Parkı,2714 Sok -2710 Sok.,A.Taner Kışlalı,3980,733,264,,,,470,,38,,,,104,5589
+7,Rauf Denktaş Parkı,3047 Sok.,Yaşamkent ,5562,1215,204,,,745,481,,92,,,,202,8501
+8,Fidel Castro  Parkı (2017),2806 Sok. 2808 Sok. ,A.Taner Kışlalı,7915,1277,377,19,,,,,,,,,785,10373
+9,Gül Dünya Parkı,S.Saltoğlu Bulvarı No:5,A.Taner Kışlalı,1372,750,66,12,,,,,,,,,,2200
+10,Meydan Parkı,2864 Cad. 2868 Sok.,A.Taner Kışlalı,2686,676,,7,,,,,,,31,,,3400
+11,Milli Atlet Muharrem Dalkılıç Koşu Yolu,2853. Cad.,A.Taner Kışlalı,29687,3282,,,,3367,,,131,,,,137,36604
+12,Ömer Lütfü Akad ,"S.Saltoğlu Bulvarı, 2747 Sokak ",A.Taner Kışlalı,8108,1353,100,,,1375,,,63,,,,,10999
+13,Prof. Dr. Türkan Saylan Parkı,2830Cad. - 2836Sok.,A.Taner Kışlalı,4675,431,457,,,,465,,106,,,,102,6236
+14,Raci Bademli  Parkı,2899. Sok.  No:1,A.Taner Kışlalı,5526,1696,,,,,,,278,,,,,7500
+15,Şht. Mustafa Oğuz Parkı ,2914 Cad. 2923 Sok. ,A.Taner Kışlalı,2780,409,107,,,,,,,,,,,3296
+16,Şht.Hava Plt. Üsteğmen M.Oğuz.Önder  Parkı,2917.Sokak-2914.Sokak-2923. Sokak,A.Taner Kışlalı,15379,2313,253,10,,,364,,,,,,281,18600
+17,Teknopark,Alacaatlı Caddesi  2851-2844.Sokak ,A.Taner Kışlalı,10563,1537,,,,,,,88,,425,,2547,15160
+18,Demokrasi Parkı ,2965 Cad. 2947 Sok.,Konutkent,1702,420,,,,,,,,,80,,75,2277
+19,Doktor Ali Sezen Parkı ,2965 Cad. 2966 Sok.,Konutkent,4840,1255,140,,,650,,,74,,,,115,7074
+20,Huzur Parkı,2957-2958  Sok.,Konutkent,709,280,111,,,,,,,,,,,1100
+21,Prof.Dr.Mehmet Haberal Parkı(2023),2961 sokak,Konutkent,17237,6318,,,,,,,,,,,8445,32000
+22,Mavişehir Parkı ,2839 Cad.  2946 Sok.,Konutkent,17897,35,,,,,,,,,,,,17932
+23,Mustafa Yeşil Parkı ,2965 Cad. 2946-2947 Sok.,Konutkent,17719,1931,216,21,,1774,,,71,,,,247,21979
+24,Muzaffer Yüzgeç Parkı ,3023.Sok.,Konutkent,3400,600,,,,,,,,,,,,4000
+25,Palmiye Parkı,2986 Sok.,Konutkent,217,33,,,,,,,,,,,,250
+26,Sebahattin Sağıroğlu Parkı,Elmas Sok. Pırlanta Sok.,Konutkent,1963,968,127,,,,,,90,,150,,,3298
+27,Süleyman Türkoğlu Parkı,2983.Cad .2979 Sok. ,Konutkent,1919,400,96,,,,,,,,,,88,2503
+28,Üç Fidan Parkı ,2639 Cad. 2967 Sok.,Konutkent,3353,809,,,,,,,,,,,208,4370
+29,Yusuf Ata Arıak Parkı,Doğan Taşdelen Blv.  2960 Sok- 2961 Sok  (Gökkuşağı Parkı),Konutkent,6811,1696,165,50,,,,,278,,,,,9000
+30,Erguvan Parkı,2714. Sok.- 2713.Sok ,Konutkent,2347,367,,,,,,,,,,,18,2732
+31,Efe Erel Parkı,Hayrabolu Caddesi Bozhöyük sokak,A.Taner Kışlalı,1500,300,,,,,,,,,,5600,,7400
+1,Ali Topuz Parkı (2020),4982 Cad.,Alacaatlı,4167,1480,,94,,970,,,222,,,,,6933
+2,Doç.Dr.Ahmet Küçükel Parkı(2015),Alacaatlı Cad. Beyler Cad. 4751 Sk. ,Alacaatlı,4259,692,,,,400,,,,,,,,5351
+3,Minik Park (2020),3381-1 Cad.,Alacaatlı,811,695,169,,,,,,,,,,,1675
+4,Orhan Veli Kanık Parkı (2018),4820 Cd. 3346/1 Sk. ,Alacaatlı,8100,,,,,480,,,100,,,,2916,11596
+5,Şht.Jan.Ast.Hüseyin Doğan Parkı,Kaplan Sokak ,Alacaatlı,2168,459,,,,,397,,104,,,,112,3240
+6,Türkiye Şehitler Parkı,Alacaatlı Yolu üzeri 3385 Sok. arası,Alacaatlı,4271,3220,427,,,,,,,,,,2300,10218
+7,Onur Şener Parkı,Alacaatlı Yolu 4982 Cadde ,Alacaatlı,2630,787,,,,,,,,,,,361,3778
+8,Vatan Parkı ve Piknik Alanı,Alacaatlı Yolu 4982 Cadde ,Alacaatlı,14219,5247,582,,,2031,,,,1096,,,,23175
+9,Prof.Dr.Müdriye Yıldız Bıçakçı Naturel Çocuk Parkı(2023),4751-3306 sokaklar arası,Alacaatlı,403,212,125,,,,,,,,,,45,785
+10,Alacaatlı Geri Dönüşüm Merkezi,Alacaatlı Cad. ile 2889/1 Sokak Arası,A.Taner Kışlalı,1086,1316,,,,,,,,,,,,2402
+11,Abdullah Baştürk Parkı(2017),2861 Cadde 2873 Sokak ,A.Taner Kışlalı,1900,630,,,,433,1437,,170,,,,,4570
+12,Aşağı Kışla Parkı,2864 Cad. 2874 Sok.,A.Taner Kışlalı,911,209,,8,,,,,,,,,49,1177
+13,Nil Parkı (2017),2861 Cad. 2871 Sok. ,A.Taner Kışlalı,1700,214,172,,,,,,,,,,766,2852
+14,78'liler  Parkı ,Genç Cad. 3485 Sok.,Dodurga,5267,900,,,,,,,,,32,,31,6230
+15,Ateş Böceği  Parkı,Örnek aileler sitesi Sağlıklı Cad. 3468 Sok - 3441 Sok.,Dodurga,1489,251,,,,,,,,,,,55,1795
+16,Bekir Coşkun Parkı (2021),Melis Cad. Çevre Sok.,Dodurga,3100,810,287,,,474,,,104,,,430,5,5210
+17,Cemal Safi Parkı,Zakir Cad. Özdebirlik sitesi,Dodurga,1640,1270,115,,,,,,,,,,,3025
+18,Çoban Yıldızı  Parkı,Odabaşı Cad.  Özseçkinköy Cad.,Dodurga,1714,227,145,,,,,,,,,,15,2101
+19,Ergenekon  Parkı,3463 Sok.,Dodurga,1265,375,95,,,,,,,,35,,70,1840
+20,Erol Günaydın Parkı,"Alacaatlı Dodurga Yolu  , Türkkonut Blv. 5130. Cad.",Dodurga,6983,548,,,,,,,,,355,,113,7999
+21,Malazgirt  Parkı,Odabaşı Cad. 3483 Sok.,Dodurga,1849,497,,,,,,,,,,,,2346
+22,Şafak  Parkı,Odabaşı Cad. 3478 Sok.,Dodurga,2571,929,,,,,,,,,,,,3500
+23,Şht Kubilay  Parkı,Ataberk Cad. Kaan Cad.,Dodurga,4257,312,111,,,,,,85,,,,26,4791
+24,Tarık Akan Parkı(2016),Ataberk Cad. 57-58  Adalar Arası/ Sevkur Cad. 3461 Sok.,Dodurga,9268,1052,557,,,,,,,,,,865,11742
+25,13 Ekim Başkent Parkı (2021),3250 Cd.3251 Cd-3258 Sok.,Yaşamkent,5050,713,240,,,,674,,100,,,,36,6813
+26,Çınar Park,Mehmet Rıfat Börekçi Cad. 3210 Sok.,Yaşamkent,3752,628,269,,,,,,77,,137,,63,4926
+27,Dr.Fazıl Küçük ,Mehmet Rıfat Börekçi Cad. 3211 Sok.,Yaşamkent,9654,2740,400,,,1525,392,375,148,,125,,586,15945
+28,Gülgün Öngel Parkı,3263 Cad. 3266 Sok.,Yaşamkent,4256,881,63,,,,,,,,,,,5200
+29,Hayrettin Karaca Parkı(2017),3222/1 Cad. 3208 Sok.,Yaşamkent,4914,1179,200,,,520,,,200,,8,,,7021
+30,Maykop Parkı,3250 Cad.-53 Cad. ,Yaşamkent,6260,410,138,,,,,,1524,,,,1200,9532
+31,Nida Tüfekçi Parkı(2021),3298-3299 Sok.,Yaşamkent,5800,394,190,,,630,,,149,,,3637,,10800
+32,Şehit Teğmen Hüseyin Akar Parkı,3250 Cad. 3245 Sok.,Yaşamkent,1446,402,,,,,,800,91,,52,,260,3051
+33,Şenol Güneş Spor Tesisi (2017),3245 Sok. 3251 Cad. (Seviye Koleji Yanı),Yaşamkent,14500,,,,,1400,182,,6000,,,,3918,26000
+34,Şht.Jand.Teğ.Korhan Kuruçay Parkı,3272 Cad. 3281 Sok.,Yaşamkent,12611,2116,201,,,870,254,,248,,,,,16300
+35,Şht.Kara Pilot Binbaşı Yaşar Erian Parkı,3230 Sok- 3233 Sok.,Yaşamkent,4018,681,94,,,,,,,,,,232,5025
+36,Yağmur Parkı,3222 Cad. 3250 Cad.,Yaşamkent,4142,35,,,,,,,,,,,,4177
+37,Yaşamkent Spor Tesisi (2017),3231. ve 3236. Sokaklar arası ,Yaşamkent,2519,393,,,,,1989,,92,,,,,4993
+38,Yaşar Kemal Parkı(2015),3150 Sok.,Yaşamkent,12456,1847,233,,,1086,,,260,,500,,58,16440
