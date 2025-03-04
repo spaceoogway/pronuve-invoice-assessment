@@ -2,9 +2,10 @@ import calendar
 import streamlit as st
 import pandas as pd
 import altair as alt
-import numpy as np
 from datetime import date, timedelta
 from dateutil import rrule
+import geemap.foliumap as geemap
+import utils
 
 # Make sure this is the very first Streamlit call for wide layout!
 st.set_page_config(page_title="Su Tüketimi Panosu", layout="wide")
@@ -12,6 +13,9 @@ st.set_page_config(page_title="Su Tüketimi Panosu", layout="wide")
 # Import and inject custom CSS styling.
 from style import inject_css, inject_logo
 inject_css()
+
+# Initialize Earth Engine for the satellite functionality
+utils.initialize_ee()
 
 # -----------------------
 # -- Data Loading and Preprocessing --
@@ -140,9 +144,9 @@ peak_water_per_m2 = df_penman["water_need_m3"].max()  # Base peak (for Kc=1)
 total_water_per_m2_interval = df_penman["water_need_m3"].sum()
 
 # --- Update Tabs to Include the New Pages ---
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
     "Genel Bakış", "Faturalar", "Kötü Performans", "Su İsrafı",
-    "Vegetasyon Su Tüketimi", "Park Su Kapasitesi"
+    "Vegetasyon Su Tüketimi", "Park Su Kapasitesi", "Harita"
 ])
 
 ##############################################
@@ -522,3 +526,96 @@ with tab6:
         color=alt.Color("Kategori:N")
     ).properties(width="container", height=300)
     st.altair_chart(bar_chart, use_container_width=True)
+
+##############################################
+#           Tab 7: Harita (Map)              #
+##############################################
+with tab7:
+
+    map_col1, map_col2 = st.columns([1, 3])
+
+    with map_col1:
+        st.subheader("Harita Ayarları")
+
+        # Load park polygons for the search functionality
+        park_gdf = utils.load_csv_polygons("data/park_polygons.csv")
+        park_names = ["Seçiniz..."] + sorted(park_gdf["name"].unique().tolist())
+
+        # Park search functionality
+        selected_park = st.selectbox("Park Ara:", park_names)
+
+        # Date selection for satellite imagery
+        st.subheader("Tarih Seçimi")
+        start_date_map = st.date_input(
+            "Başlangıç Tarihi",
+            value=date(2023, 6, 1),
+            min_value=date(2000, 1, 1),
+            max_value=date(2024, 12, 31)
+        )
+
+        end_date_map = st.date_input(
+            "Bitiş Tarihi",
+            value=date(2023, 6, 28),
+            min_value=date(2000, 1, 1),
+            max_value=date(2024, 12, 31)
+        )
+
+        if start_date_map > end_date_map:
+            st.warning("Başlangıç tarihi, bitiş tarihinden sonra olamaz.")
+            start_date_map, end_date_map = end_date_map, start_date_map
+
+
+
+    with map_col2:
+        # Default center and buffer
+        center = [39.9052, 32.8112]  # Default: Ankara coordinates
+        zoom_level = 12
+        buffer = 0.02  # Default buffer
+
+        # Determine map center and bounds based on selected park
+        if selected_park != "Seçiniz...":
+            # Get the park geometry
+            selected_park_geom = park_gdf[park_gdf["name"] == selected_park].iloc[0]["geometry"]
+
+            # Get the centroid for the AOI creation
+            center = [selected_park_geom.centroid.y, selected_park_geom.centroid.x]
+
+            # Calculate a tighter buffer based on park size
+            minx, miny, maxx, maxy = selected_park_geom.bounds
+            width = maxx - minx
+            height = maxy - miny
+            buffer = max(width, height) * 0.5  # Buffer based on park size
+
+            # Set a closer zoom level
+            zoom_level = 15
+
+        # Create AOI for satellite image
+        aoi = utils.create_aoi(center, buffer)
+
+        # Format dates for API
+        start_date_str = start_date_map.strftime("%Y-%m-%d")
+        end_date_str = end_date_map.strftime("%Y-%m-%d")
+
+        # Get satellite image
+        image = utils.get_satellite_image(aoi, start_date_str, end_date_str)
+
+        # Compute ndvi of the image
+        ndvi = utils.compute_ndvi(image)
+
+        # Create map with the selected layers
+        m = utils.create_map_with_layers(center, zoom_level)
+
+        # Add park polygons to the map and return parks union
+        # This function now handles map bounds adjustment
+        parks_union = utils.add_park_polygons(m, "data/park_polygons.csv", selected_park)
+
+        m = utils.add_ndvi_layer(m, parks_union, ndvi)
+
+        # Add layer control
+        m.addLayerControl()
+
+        # Put the map to streamlit
+        m.to_streamlit(height=670)
+
+if __name__ == "__main__":
+    pass  # Main execution happens above
